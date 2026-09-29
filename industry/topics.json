@@ -848,8 +848,20 @@
       "name": "同业对比（消费级与中小企业安防）",
       "group": "company",
       "tags": [
-        "家用消费级",
-        "商用企业级"
+        "entity:seetong",
+        "entity:jiegao",
+        "entity:jovision",
+        "entity:xiongmai",
+        "entity:sunywo",
+        "entity:anjiavision",
+        "entity:hanhui",
+        "entity:tuya",
+        "entity:ansjer",
+        "entity:tvt",
+        "entity:ruision",
+        "entity:gwell",
+        "entity:qingshi",
+        "entity:shimeta"
       ],
       "definition": "把天视通与捷高、中维世纪、雄迈、安佳威视、涂鸦智能、安联锐视、同为股份、技威时代的动态放在一处：消费级与中小企业安防赛道，按产品发布、技术路线（AOV/低功耗/4G 布点）、生态合作与出海节奏对比。",
       "related": [

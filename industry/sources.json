@@ -342,17 +342,19 @@
         "titleSelector": "div.newlist_r_title a",
         "publishedAtSelector": "div.newlist_r_time",
         "_aihot": {
-          "initialBackfillLimit": 8
+          "initialBackfillLimit": 15,
+          "initialBackfillMonths": 24
         }
       },
-      "tier": "T1",
+      "tier": "T1_5",
       "first_party": true,
       "owner_entity_id": "seetong",
       "participation_mode": "editorial",
       "interval_minutes": 120,
       "tags": [
         "官方",
-        "我司"
+        "我司",
+        "同业监测"
       ],
       "site_fulltext": false,
       "syndicate_fulltext": false
@@ -381,7 +383,7 @@
           "initialBackfillLimit": 8
         }
       },
-      "tier": "T1",
+      "tier": "T1_5",
       "first_party": true,
       "owner_entity_id": "jiegao",
       "participation_mode": "editorial",
@@ -389,7 +391,8 @@
       "tags": [
         "官方",
         "友商",
-        "产品"
+        "产品",
+        "同业监测"
       ],
       "site_fulltext": false,
       "syndicate_fulltext": false
@@ -409,14 +412,15 @@
           "initialBackfillLimit": 8
         }
       },
-      "tier": "T1",
+      "tier": "T1_5",
       "first_party": true,
       "owner_entity_id": "jovision",
       "participation_mode": "editorial",
       "interval_minutes": 120,
       "tags": [
         "官方",
-        "友商"
+        "友商",
+        "同业监测"
       ],
       "site_fulltext": false,
       "syndicate_fulltext": false
@@ -453,14 +457,15 @@
           "initialBackfillLimit": 8
         }
       },
-      "tier": "T1",
+      "tier": "T1_5",
       "first_party": true,
       "owner_entity_id": "tvt",
       "participation_mode": "editorial",
       "interval_minutes": 120,
       "tags": [
         "官方",
-        "友商"
+        "友商",
+        "同业监测"
       ],
       "site_fulltext": false,
       "syndicate_fulltext": false
@@ -490,14 +495,15 @@
           "initialBackfillLimit": 8
         }
       },
-      "tier": "T1",
+      "tier": "T1_5",
       "first_party": true,
       "owner_entity_id": "tuya",
       "participation_mode": "editorial",
       "interval_minutes": 120,
       "tags": [
         "官方",
-        "友商"
+        "友商",
+        "同业监测"
       ],
       "site_fulltext": false,
       "syndicate_fulltext": false
@@ -516,14 +522,15 @@
           "initialBackfillLimit": 8
         }
       },
-      "tier": "T1",
+      "tier": "T1_5",
       "first_party": true,
       "owner_entity_id": "gwell",
       "participation_mode": "editorial",
       "interval_minutes": 120,
       "tags": [
         "官方",
-        "友商"
+        "友商",
+        "同业监测"
       ],
       "site_fulltext": false,
       "syndicate_fulltext": false
@@ -542,7 +549,7 @@
           "initialBackfillLimit": 8
         }
       },
-      "tier": "T1",
+      "tier": "T1_5",
       "first_party": true,
       "owner_entity_id": "anjiavision",
       "participation_mode": "editorial",
@@ -550,7 +557,8 @@
       "tags": [
         "官方",
         "友商",
-        "产品"
+        "产品",
+        "同业监测"
       ],
       "site_fulltext": false,
       "syndicate_fulltext": false
@@ -569,7 +577,7 @@
           "initialBackfillLimit": 8
         }
       },
-      "tier": "T1",
+      "tier": "T1_5",
       "first_party": true,
       "owner_entity_id": "shimeta",
       "participation_mode": "editorial",
@@ -577,7 +585,8 @@
       "tags": [
         "官方",
         "友商",
-        "产品"
+        "产品",
+        "同业监测"
       ],
       "site_fulltext": false,
       "syndicate_fulltext": false
@@ -592,14 +601,15 @@
           "initialBackfillLimit": 8
         }
       },
-      "tier": "T1",
+      "tier": "T1_5",
       "first_party": true,
       "owner_entity_id": "ansjer",
       "participation_mode": "editorial",
       "interval_minutes": 120,
       "tags": [
         "官方",
-        "友商"
+        "友商",
+        "同业监测"
       ],
       "site_fulltext": false,
       "syndicate_fulltext": false
