@@ -688,6 +688,182 @@
         "video-analytics",
         "reviews"
       ]
+    },
+    {
+      "slug": "seetong",
+      "name": "天视通（我司）",
+      "group": "company",
+      "tags": [
+        "entity:seetong"
+      ],
+      "definition": "深圳天视通技术有限公司的全部动态：IPC、低功耗与无线摄像机、4G 球机、NVR 与云平台。本站主体，内容同时用于与友商做同业对比。",
+      "related": [
+        "jiegao",
+        "jovision",
+        "xiongmai",
+        "peer-watch"
+      ],
+      "entityId": "seetong"
+    },
+    {
+      "slug": "jiegao",
+      "name": "捷高",
+      "group": "company",
+      "tags": [
+        "entity:jiegao"
+      ],
+      "definition": "深圳市捷高电子科技有限公司的 AOV / 4G / Wi-Fi / IPC / 低功耗摄像机与 NVR 动态。同赛道友商。",
+      "related": [
+        "seetong",
+        "jovision",
+        "xiongmai",
+        "peer-watch"
+      ],
+      "entityId": "jiegao"
+    },
+    {
+      "slug": "jovision",
+      "name": "中维世纪",
+      "group": "company",
+      "tags": [
+        "entity:jovision"
+      ],
+      "definition": "中维世纪（山东中维）的消费级与中小企业安防产品、方案与经营动态。同赛道友商。",
+      "related": [
+        "seetong",
+        "jiegao",
+        "xiongmai",
+        "peer-watch"
+      ],
+      "entityId": "jovision"
+    },
+    {
+      "slug": "xiongmai",
+      "name": "雄迈",
+      "group": "company",
+      "tags": [
+        "entity:xiongmai"
+      ],
+      "definition": "雄迈（浙江雄迈）的 IPC、低功耗与无线套装产品动态。同赛道友商（官网更新较少，作存在性监测）。",
+      "related": [
+        "seetong",
+        "jiegao",
+        "jovision",
+        "peer-watch"
+      ],
+      "entityId": "xiongmai"
+    },
+    {
+      "slug": "anjiavision",
+      "name": "安佳威视",
+      "group": "company",
+      "tags": [
+        "entity:anjiavision"
+      ],
+      "definition": "安佳威视的产品与方案动态。同赛道友商。",
+      "related": [
+        "seetong",
+        "jovision",
+        "peer-watch"
+      ],
+      "entityId": "anjiavision"
+    },
+    {
+      "slug": "tuya",
+      "name": "涂鸦智能",
+      "group": "company",
+      "tags": [
+        "entity:tuya"
+      ],
+      "definition": "涂鸦智能的 IoT / 智能视觉产品与生态合作动态。平台型友商，常与摄像机厂商合作。",
+      "related": [
+        "seetong",
+        "jovision",
+        "peer-watch"
+      ],
+      "entityId": "tuya"
+    },
+    {
+      "slug": "ansjer",
+      "name": "安联锐视",
+      "group": "company",
+      "tags": [
+        "entity:ansjer"
+      ],
+      "definition": "安联锐视（Ansjer）的摄像机与方案动态。同赛道友商。",
+      "related": [
+        "seetong",
+        "jiegao",
+        "peer-watch"
+      ],
+      "entityId": "ansjer"
+    },
+    {
+      "slug": "tvt",
+      "name": "同为股份",
+      "group": "company",
+      "tags": [
+        "entity:tvt"
+      ],
+      "definition": "同为股份（TVT）的 IPC、NVR 与解决方案动态。同赛道友商。",
+      "related": [
+        "seetong",
+        "jovision",
+        "peer-watch"
+      ],
+      "entityId": "tvt"
+    },
+    {
+      "slug": "gwell",
+      "name": "技威时代",
+      "group": "company",
+      "tags": [
+        "entity:gwell"
+      ],
+      "definition": "技威时代（Gwell / Yoosee）的智能摄像机与出海品牌动态。同赛道友商。",
+      "related": [
+        "seetong",
+        "jovision",
+        "peer-watch"
+      ],
+      "entityId": "gwell"
+    },
+    {
+      "slug": "shimeta",
+      "name": "视美泰",
+      "group": "company",
+      "tags": [
+        "entity:shimeta"
+      ],
+      "definition": "视美泰（SVMAT）的 AIoT 主板、算力盒子与行业方案动态。上游方案商，可为产品选型参考。",
+      "related": [
+        "seetong",
+        "tuya",
+        "peer-watch"
+      ],
+      "entityId": "shimeta"
+    },
+    {
+      "slug": "peer-watch",
+      "name": "同业对比（消费级与中小企业安防）",
+      "group": "company",
+      "tags": [
+        "家用消费级",
+        "商用企业级"
+      ],
+      "definition": "把天视通与捷高、中维世纪、雄迈、安佳威视、涂鸦智能、安联锐视、同为股份、技威时代的动态放在一处：消费级与中小企业安防赛道，按产品发布、技术路线（AOV/低功耗/4G 布点）、生态合作与出海节奏对比。",
+      "related": [
+        "seetong",
+        "jiegao",
+        "jovision",
+        "xiongmai",
+        "anjiavision",
+        "tuya",
+        "ansjer",
+        "tvt",
+        "gwell",
+        "shimeta"
+      ]
     }
   ]
 }

@@ -1,5 +1,6 @@
 // Names, dates and grouping for daily, weekly and monthly reports.
 import type { ReportNavigationEntry, ReportKind } from "@aihot/contracts/site";
+import { withSubject } from "@aihot/industry/site";
 import { beijingWeekday } from "../../lib/format";
 
 export const KINDS: ReportKind[] = ["daily", "weekly", "monthly"];
@@ -33,11 +34,16 @@ export function monthRange(key: string): [string, string] {
   return [`${key}-01`, ymd(new Date(Date.UTC(y, m, 0)))];
 }
 
-/** "这一天的 4 件 AI 大事" / "本周的 12 件 AI 大事" / "8 月的 20 件 AI 大事". */
+/** "这一天的 4 件安防大事" / "本周的 12 件安防大事" / "8 月的 20 件安防大事".
+ *  行业词取自 industry/site.ts，不写死，换行业自动跟随。 */
 export function headline(kind: ReportKind, key: string, count: number): string {
-  if (kind === "daily") return `这一天的 ${count} 件 AI 大事`;
-  if (kind === "weekly") return `本周的 ${count} 件 AI 大事`;
-  return `${Number(key.slice(5, 7))} 月的 ${count} 件 AI 大事`;
+  const subject = withSubject("");
+  // 拉丁行业词（AI）两侧要空格，中文行业词（安防）不要。
+  const gap = /[A-Za-z0-9]$/.test(subject) ? " " : "";
+  const phrase = `${count} 件${gap}${subject}${gap}大事`;
+  if (kind === "daily") return `这一天的 ${phrase}`;
+  if (kind === "weekly") return `本周的 ${phrase}`;
+  return `${Number(key.slice(5, 7))} 月的 ${phrase}`;
 }
 
 /** "09.16" for a story inside a week or month. */

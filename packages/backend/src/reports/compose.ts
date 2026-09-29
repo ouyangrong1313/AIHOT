@@ -46,7 +46,17 @@ function roleOf(kind: string, firstParty: boolean): string {
   return "媒体";
 }
 
-export async function candidates(start: Date, end: Date): Promise<Candidate[]> {
+/**
+ * Items for a report window.
+ *
+ * `includeBackfill` decides what happens to material archived on discovery ("旧文不刷屏"): by default
+ * it is left out entirely, which is what the scheduled 08:00 edition wants — a backfill must never be
+ * presented as today's news. When a historical edition is being filled in, it is set to true and those
+ * items are placed by `timeline_at`, the time the item is *about*, so a report from 09-11 contains what
+ * happened on 09-11 rather than everything that happened to be imported on the day the source was added.
+ * The default path is unchanged: live items are still attributed by the later of arrival and release.
+ */
+export async function candidates(start: Date, end: Date, includeBackfill = false): Promise<Candidate[]> {
   const rows = await sql.begin("isolation level read committed", async (tx) => {
     // Wait for in-flight releases and keep later ones outside this snapshot. The following SELECT
     // gets a fresh READ COMMITTED snapshot; model calls and report writes happen after the lock ends.
@@ -59,11 +69,15 @@ export async function candidates(start: Date, end: Date): Promise<Candidate[]> {
              s.kind AS source_kind, f.public_id AS fact_public_id, st.public_id::text AS story_public_id, p.timeline_at AS at, p.backfill
       FROM publications p JOIN sources s ON s.id = p.source_id
       LEFT JOIN facts f ON f.id = p.fact_id LEFT JOIN stories st ON st.id = f.story_id
-      -- Attribute each item by the later of arrival and release; either range can use its index.
-      WHERE p.visibility = 'public' AND p.selected AND NOT p.backfill
+      WHERE p.visibility = 'public' AND p.selected
         AND (
-          (p.visible_after <= p.timeline_at AND p.timeline_at >= ${start} AND p.timeline_at < ${end})
-          OR (p.visible_after > p.timeline_at AND p.visible_after >= ${start} AND p.visible_after < ${end})
+          -- Live material: attribute each item by the later of arrival and release; either range can use its index.
+          (NOT p.backfill AND (
+            (p.visible_after <= p.timeline_at AND p.timeline_at >= ${start} AND p.timeline_at < ${end})
+            OR (p.visible_after > p.timeline_at AND p.visible_after >= ${start} AND p.visible_after < ${end})
+          ))
+          -- Archived material, only while filling in a past edition: place it by what it is about.
+          OR (${includeBackfill} AND p.backfill AND p.timeline_at >= ${start} AND p.timeline_at < ${end})
         )`;
   });
   // One entry per fact: first-party first, then score.
@@ -133,12 +147,18 @@ async function saveReport(kind: "daily" | "weekly" | "monthly", key: string, sta
   });
 }
 
-/** Daily report for Beijing date D covers [D-1 08:00, D 08:00) Beijing time. */
-export async function composeDaily(date: string, reason = "scheduled"): Promise<{ key: string; entries: number }> {
+/**
+ * Daily report for Beijing date D covers [D-1 08:00, D 08:00) Beijing time.
+ *
+ * `includeBackfill` is for filling in an edition that predates the site's first live collection: it lets
+ * material archived on discovery (a new source's backlog) count for the day it is actually about, so the
+ * issue is a real historical record instead of an empty page. The scheduled 08:00 run never sets it.
+ */
+export async function composeDaily(date: string, reason = "scheduled", includeBackfill = false): Promise<{ key: string; entries: number }> {
   const end = new Date(beijingMidnight(date).getTime() + 8 * 3600 * 1000);
   const start = new Date(end.getTime() - 86400000);
   const covered = await recentlyCovered("daily", date);
-  const all = await candidates(start, end);
+  const all = await candidates(start, end, includeBackfill);
   const fresh = all.filter((c) => !covered.has(c.factKey) && !covered.has(`a:${c.itemId}`));
   const perSection = new Map<string, Candidate[]>();
   const flashes: Array<{ itemId: string; title: string; sourceName: string; sourceUrl: string; publishedAt: string }> = [];
@@ -172,6 +192,12 @@ export async function composeDaily(date: string, reason = "scheduled"): Promise<
     windowEnd: end.toISOString(),
     generator: { version: REPORT_VERSION, model, repeatsSuppressed: all.length - fresh.length },
   };
+  // Never create a brand-new empty edition: an issue with nothing in it is a blank page readers can
+  // open and get nothing from, and it also hides the honest "no issue yet" empty state. An edition that
+  // already exists is still rewritten, so withdrawing items does update the issue it appeared in.
+  if (ordered.length === 0 && flashes.length === 0 && !(await reportExists("daily", date))) {
+    return { key: date, entries: 0 };
+  }
   await saveReport("daily", date, start, end, content, reason, model);
   if (lead) await completeReceipt(sql, lead.receiptId);
   return { key: date, entries: ordered.length };
@@ -197,10 +223,10 @@ export function periodPrompt(kind: "weekly" | "monthly", startDate: string, endD
   };
 }
 
-async function composePeriod(kind: "weekly" | "monthly", key: string, startDate: string, endDateInclusive: string, reason: string) {
+async function composePeriod(kind: "weekly" | "monthly", key: string, startDate: string, endDateInclusive: string, reason: string, includeBackfill = false) {
   const start = beijingMidnight(startDate);
   const end = beijingMidnight(addDays(endDateInclusive, 1));
-  const all = await candidates(start, end);
+  const all = await candidates(start, end, includeBackfill);
   const top = all.slice(0, kind === "weekly" ? 40 : 60);
   const dailyCount = (await sql<{ n: number }[]>`SELECT count(*) AS n FROM reports WHERE kind = 'daily' AND key >= ${startDate} AND key <= ${endDateInclusive}`)[0]?.n ?? 0;
   let themes: Array<{ heading: string; summary: string; storyRefs: ReportEntry[] }> = [];
@@ -235,23 +261,32 @@ async function composePeriod(kind: "weekly" | "monthly", key: string, startDate:
     metrics: { totalStories: themes.reduce((n, t) => n + t.storyRefs.length, 0), selectedCount: all.length, reportsCovered: Number(dailyCount) },
     generator: { version: REPORT_VERSION, model },
   };
+  if (top.length === 0 && themes.length === 0 && !(await reportExists(kind, key))) {
+    return { key, entries: 0 };
+  }
   await saveReport(kind, key, start, end, content, reason, model);
   if (receiptId) await completeReceipt(sql, receiptId);
   return { key, entries: top.length };
 }
 
-export async function composeWeekly(label: string, reason = "scheduled") {
-  const range = isoWeekRange(label);
-  if (!range) throw new Error(`bad week label ${label}`);
-  return composePeriod("weekly", label, range.start, range.end, reason);
+/** Whether an edition is already on record, so an empty recompose can leave it untouched but not create one. */
+async function reportExists(kind: "daily" | "weekly" | "monthly", key: string): Promise<boolean> {
+  const [row] = await sql<{ n: number }[]>`SELECT 1 AS n FROM reports WHERE kind = ${kind} AND key = ${key}`;
+  return !!row;
 }
 
-export async function composeMonthly(label: string, reason = "scheduled") {
+export async function composeWeekly(label: string, reason = "scheduled", includeBackfill = false) {
+  const range = isoWeekRange(label);
+  if (!range) throw new Error(`bad week label ${label}`);
+  return composePeriod("weekly", label, range.start, range.end, reason, includeBackfill);
+}
+
+export async function composeMonthly(label: string, reason = "scheduled", includeBackfill = false) {
   const m = /^(\d{4})-(\d{2})$/.exec(label);
   if (!m) throw new Error(`bad month label ${label}`);
   const start = `${label}-01`;
   const next = Number(m[2]) === 12 ? `${Number(m[1]) + 1}-01-01` : `${m[1]}-${String(Number(m[2]) + 1).padStart(2, "0")}-01`;
-  return composePeriod("monthly", label, start, addDays(next, -1), reason);
+  return composePeriod("monthly", label, start, addDays(next, -1), reason, includeBackfill);
 }
 
 /**

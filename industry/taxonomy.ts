@@ -47,6 +47,8 @@ export const TOPIC_TAGS = [
 export const ENTITY_TAGS = [
   "海康威视", "大华股份", "宇视科技", "华为机器视觉", "天地伟业", "萤石网络",
   "乐橙", "Axis", "Bosch", "Hanwha", "Milestone", "Genetec", "Lorex", "Longse",
+  "天视通", "捷高", "中维世纪", "雄迈", "尚维", "安佳威视", "翰辉", "涂鸦智能",
+  "安联锐视", "同为股份", "芯睿视", "技威时代", "庆视互联", "视美泰",
   "公安部", "市场监管总局", "网信办", "工信部", "中国安防协会",
 ] as const;
 
@@ -106,6 +108,22 @@ export const ENTITIES: Readonly<Record<string, { name: string; displayTag: strin
   cac: { name: "网信办", displayTag: "网信办", aliases: ["网信办", "中央网信办", "国家互联网信息办公室"] },
   miit: { name: "工信部", displayTag: "工信部", aliases: ["工信部", "工业和信息化部", "MIIT"] },
   csppi: { name: "中国安全防范产品行业协会", displayTag: "中国安防协会", aliases: ["中国安防协会", "中国安全防范产品行业协会", "中安协"] },
+
+  // ── 天视通（本站主体）与 IPC / 低功耗摄像机同赛道友商 ──────────────────────────
+  seetong: { name: "深圳天视通技术有限公司", displayTag: "天视通", aliases: ["天视通", "深圳天视通", "Topsee", "tpsee", "Seetong"] },
+  jiegao: { name: "深圳市捷高电子科技有限公司", displayTag: "捷高", aliases: ["捷高", "捷高电子", "Jabsco", "JCO", "cnjabsco"] },
+  jovision: { name: "中维世纪", displayTag: "中维世纪", aliases: ["中维世纪", "山东中维", "Jovision"] },
+  xiongmai: { name: "雄迈", displayTag: "雄迈", aliases: ["雄迈", "浙江雄迈", "XiongMai", "xiongmaitech"] },
+  sunywo: { name: "尚维", displayTag: "尚维", aliases: ["尚维", "Shangwei", "Sunywo"] },
+  anjiavision: { name: "安佳威视", displayTag: "安佳威视", aliases: ["安佳威视", "Anjiavision", "安佳"] },
+  hanhui: { name: "翰辉", displayTag: "翰辉", aliases: ["翰辉", "瀚晖威视", "Hanhui", "Hankvision"] },
+  tuya: { name: "涂鸦智能", displayTag: "涂鸦智能", aliases: ["涂鸦智能", "涂鸦", "Tuya"] },
+  ansjer: { name: "安联锐视", displayTag: "安联锐视", aliases: ["安联锐视", "Ansjer", "安联"] },
+  tvt: { name: "同为股份", displayTag: "同为股份", aliases: ["同为股份", "同为数码", "TVT", "TVT Digital"] },
+  ruision: { name: "芯睿视", displayTag: "芯睿视", aliases: ["芯睿视", "Chipview", "Ruision"] },
+  gwell: { name: "技威时代", displayTag: "技威时代", aliases: ["技威时代", "技威", "Gwell", "Yoosee"] },
+  qingshi: { name: "庆视互联", displayTag: "庆视互联", aliases: ["庆视互联", "庆视", "Qingshi"] },
+  shimeta: { name: "视美泰", displayTag: "视美泰", aliases: ["视美泰", "SVMAT", "Shimeta"] },
 };
 
 /**
@@ -123,6 +141,20 @@ export const IDENTITY_LEXICON: ReadonlyArray<{ id: string; name: string; pattern
   { id: "axis", name: "Axis", patterns: [/\baxis\b|安讯士/i] },
   { id: "lorex", name: "Lorex", patterns: [/\blorex\b/i] },
   { id: "longse", name: "龙视科技 Longse", patterns: [/\blongse\b|龙视科技|深圳龙视/i] },
+  { id: "seetong", name: "天视通", patterns: [/天视通|\btopsee\b|\btpsee\b|\bseetong\b/i] },
+  { id: "jiegao", name: "捷高", patterns: [/捷高|\bjabsco\b|\bcnjabsco\b/i] },
+  { id: "jovision", name: "中维世纪", patterns: [/中维世纪|山东中维|\bjovision\b/i] },
+  { id: "xiongmai", name: "雄迈", patterns: [/雄迈|\bxiongmai\b|xiongmaitech/i] },
+  { id: "sunywo", name: "尚维", patterns: [/尚维|\bsunywo\b/i] },
+  { id: "anjiavision", name: "安佳威视", patterns: [/安佳威视|\banjiavision\b/i] },
+  { id: "hanhui", name: "翰辉", patterns: [/翰辉|瀚晖威视|\bhankvision\b/i] },
+  { id: "tuya", name: "涂鸦智能", patterns: [/涂鸦智能|涂鸦|\btuya\b/i] },
+  { id: "ansjer", name: "安联锐视", patterns: [/安联锐视|\bansjer\b/i] },
+  { id: "tvt", name: "同为股份", patterns: [/同为股份|同为数码|\btvt\b/i] },
+  { id: "ruision", name: "芯睿视", patterns: [/芯睿视|\bruision\b|chipview/i] },
+  { id: "gwell", name: "技威时代", patterns: [/技威时代|技威|\bgwell\b|\byoosee\b/i] },
+  { id: "qingshi", name: "庆视互联", patterns: [/庆视互联|庆视/i] },
+  { id: "shimeta", name: "视美泰", patterns: [/视美泰|\bsvmat\b|shimeta/i] },
   { id: "bosch", name: "Bosch", patterns: [/\bbosch\b|博世/i] },
   { id: "hanwha", name: "Hanwha Vision", patterns: [/hanwha|韩华/i] },
   { id: "milestone", name: "Milestone", patterns: [/milestone/i] },
@@ -148,6 +180,17 @@ export const PUBLISHER_DOMAINS: ReadonlyArray<{ entityId: string; domains: reado
   { entityId: "milestone", domains: ["milestonesys.com"] },
   { entityId: "genetec", domains: ["genetec.com"] },
   { entityId: "csppi", domains: ["csppi.org"] },
+  { entityId: "seetong", domains: ["tpsee.com", "seetong.com"] },
+  { entityId: "jiegao", domains: ["cnjabsco.com"] },
+  { entityId: "jovision", domains: ["jovision.com", "zoweetech.com"] },
+  { entityId: "xiongmai", domains: ["xiongmaitech.com"] },
+  { entityId: "sunywo", domains: ["sunywo.com"] },
+  { entityId: "anjiavision", domains: ["anjiavision.com"] },
+  { entityId: "tuya", domains: ["tuya.com", "tuya.cn"] },
+  { entityId: "ansjer", domains: ["ansjer.com"] },
+  { entityId: "tvt", domains: ["tvt.net.cn", "tvtdigital.com"] },
+  { entityId: "gwell", domains: ["gwelltimes.com", "yoosee.co"] },
+  { entityId: "shimeta", domains: ["shimeta.com.cn"] },
 ];
 
 /** 原文里的这些写法也算提到了对应公司。 */

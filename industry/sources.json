@@ -330,6 +330,279 @@
       ],
       "site_fulltext": false,
       "syndicate_fulltext": false
+    },
+    {
+      "id": "weblist-seetong-news",
+      "name": "天视通 Topsee 新闻中心",
+      "kind": "web_list",
+      "config": {
+        "url": "http://www.tpsee.com/news.html",
+        "itemSelector": "div.newlist > ul > li",
+        "linkSelector": "div.newlist_r_title a",
+        "titleSelector": "div.newlist_r_title a",
+        "publishedAtSelector": "div.newlist_r_time",
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "first_party": true,
+      "owner_entity_id": "seetong",
+      "participation_mode": "editorial",
+      "interval_minutes": 120,
+      "tags": [
+        "官方",
+        "我司"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "weblist-jiegao-news",
+      "name": "捷高电子新品动态",
+      "kind": "json_list",
+      "config": {
+        "url": "https://www.cnjabsco.com/getArticleList?page=1&limit=15&categoryId=73",
+        "itemsPath": "rows",
+        "titlePaths": [
+          "articleTitle"
+        ],
+        "summaryPaths": [
+          "articleContent"
+        ],
+        "publishedAtPath": "addTime",
+        "publishedAtUnit": "epoch_s",
+        "urlTemplateFallback": "https://www.cnjabsco.com/newsArticleDetail?categoryId={categoryId}&articleId={articleId}",
+        "rawDropKeys": [
+          "articleContent",
+          "articleCover"
+        ],
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "first_party": true,
+      "owner_entity_id": "jiegao",
+      "participation_mode": "editorial",
+      "interval_minutes": 120,
+      "tags": [
+        "官方",
+        "友商",
+        "产品"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "weblist-jovision-news",
+      "name": "中维世纪企业动态",
+      "kind": "web_list",
+      "config": {
+        "url": "http://www.jovision.com/HttpHander/news.ashx?page=0&pageSize=8&cid=349",
+        "baseUrl": "http://www.jovision.com/Company/",
+        "itemSelector": "div.newbody",
+        "linkSelector": "div.nbtop a",
+        "titleSelector": "div.nbtop a",
+        "publishedAtSelector": "div.nbtop span",
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "first_party": true,
+      "owner_entity_id": "jovision",
+      "participation_mode": "editorial",
+      "interval_minutes": 120,
+      "tags": [
+        "官方",
+        "友商"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "weblist-tvt-news",
+      "name": "同为股份 TVT 新闻资讯",
+      "kind": "json_list",
+      "config": {
+        "url": "https://www.tvt.net.cn/common/data/page",
+        "method": "POST",
+        "headers": {
+          "content-type": "application/json"
+        },
+        "bodyJson": {
+          "categoryId": "",
+          "pageNum": 1,
+          "pageSize": 10
+        },
+        "itemsPath": "list",
+        "titlePaths": [
+          "title"
+        ],
+        "summaryPaths": [
+          "resume"
+        ],
+        "publishedAtPath": "dataTime",
+        "publishedAtUnit": "epoch_ms",
+        "urlTemplate": "https://www.tvt.net.cn/news/{id}.html",
+        "rawDropKeys": [
+          "content"
+        ],
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "first_party": true,
+      "owner_entity_id": "tvt",
+      "participation_mode": "editorial",
+      "interval_minutes": 120,
+      "tags": [
+        "官方",
+        "友商"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "weblist-tuya-news",
+      "name": "涂鸦智能新闻",
+      "kind": "json_list",
+      "config": {
+        "url": "https://www.tuya.com/cn/news",
+        "mode": "html_json_key",
+        "jsonKey": "dataList",
+        "titlePaths": [
+          "title"
+        ],
+        "summaryPaths": [
+          "content"
+        ],
+        "publishedAtPath": "publishTime",
+        "publishedAtUnit": "epoch_ms",
+        "urlTemplate": "https://www.tuya.com/cn/news-details/{knowledgeCode}",
+        "rawDropKeys": [
+          "content",
+          "attributes"
+        ],
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "first_party": true,
+      "owner_entity_id": "tuya",
+      "participation_mode": "editorial",
+      "interval_minutes": 120,
+      "tags": [
+        "官方",
+        "友商"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "weblist-gwell-news",
+      "name": "技威时代 Yoosee 企业动态",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.gwell.cc/index.php?news_50/",
+        "itemSelector": "a[href*=\"news_50\"]",
+        "linkSelector": "a",
+        "titleSelector": "div.title",
+        "publishedAtSelector": "div.time",
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "first_party": true,
+      "owner_entity_id": "gwell",
+      "participation_mode": "editorial",
+      "interval_minutes": 120,
+      "tags": [
+        "官方",
+        "友商"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "weblist-anjiavision-news",
+      "name": "安佳威视新闻中心",
+      "kind": "web_list",
+      "config": {
+        "url": "http://www.anjvision.com/news/",
+        "itemSelector": "li.media",
+        "linkSelector": "div.media-body h4 a",
+        "titleSelector": "div.media-body h4 a",
+        "publishedAtSelector": "p.info span",
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "first_party": true,
+      "owner_entity_id": "anjiavision",
+      "participation_mode": "editorial",
+      "interval_minutes": 120,
+      "tags": [
+        "官方",
+        "友商",
+        "产品"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "weblist-shimeta-news",
+      "name": "视美泰企业动态",
+      "kind": "web_list",
+      "config": {
+        "url": "https://www.shimeta.com.cn/qydt",
+        "itemSelector": ".w-list-item",
+        "linkSelector": "a.w-list-link",
+        "titleSelector": ".w-list-title",
+        "publishedAtSelector": ".w-list-date",
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "first_party": true,
+      "owner_entity_id": "shimeta",
+      "participation_mode": "editorial",
+      "interval_minutes": 120,
+      "tags": [
+        "官方",
+        "友商",
+        "产品"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
+    },
+    {
+      "id": "rss-ansjer-blog",
+      "name": "安联锐视 Ansjer 官方博客",
+      "kind": "rss",
+      "config": {
+        "feedUrl": "https://www.ansjer.com/feed/",
+        "_aihot": {
+          "initialBackfillLimit": 8
+        }
+      },
+      "tier": "T1",
+      "first_party": true,
+      "owner_entity_id": "ansjer",
+      "participation_mode": "editorial",
+      "interval_minutes": 120,
+      "tags": [
+        "官方",
+        "友商"
+      ],
+      "site_fulltext": false,
+      "syndicate_fulltext": false
     }
   ]
 }
