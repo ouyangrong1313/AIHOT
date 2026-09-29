@@ -1,577 +1,692 @@
 {
-  "exportedAt": "2026-09-26",
+  "exportedAt": "2026-09-29",
   "groups": [
     {
       "key": "company",
-      "name": "公司与模型",
-      "blurb": "按厂商与模型系追踪：谁发了什么、又赢了哪一局"
+      "name": "厂商与机构",
+      "blurb": "按厂商、平台与监管机构追踪：谁发了什么、谁定的规矩"
     },
     {
       "key": "field",
       "name": "技术方向",
-      "blurb": "按技术领域深挖：Agent、多模态、具身智能……"
+      "blurb": "按技术领域深挖：端侧 AI、低照度成像、周界防范、协议互联……"
     },
     {
       "key": "genre",
       "name": "内容形态",
-      "blurb": "按内容类型浏览：论文、教程、观点、政策……"
+      "blurb": "按内容类型浏览：产品发布、标准、政策、项目、评测……"
     }
   ],
   "topics": [
     {
-      "slug": "openai",
-      "name": "OpenAI / ChatGPT",
+      "slug": "hikvision",
+      "name": "海康威视",
       "group": "company",
-      "entityId": "openai",
+      "entityId": "hikvision",
       "tags": [
-        "OpenAI",
-        "entity:openai"
+        "海康威视",
+        "entity:hikvision"
       ],
-      "definition": "OpenAI 的全部动态：GPT 系列模型、ChatGPT 与 Sora 产品、公司战略与人事的持续追踪。",
+      "definition": "海康威视及其子品牌（海康机器人、海康汽车电子、海康微影）的全部动态：产品线与固件更新、经营与项目、技术路线的持续追踪。",
       "related": [
-        "anthropic",
-        "google",
-        "model-releases"
+        "dahua",
+        "uniview",
+        "product-releases"
       ]
     },
     {
-      "slug": "anthropic",
-      "name": "Anthropic / Claude",
+      "slug": "dahua",
+      "name": "大华股份",
       "group": "company",
-      "entityId": "anthropic",
+      "entityId": "dahua",
       "tags": [
-        "Anthropic",
-        "entity:anthropic"
+        "大华股份",
+        "entity:dahua"
       ],
-      "definition": "Anthropic 的全部动态：Claude 系列模型、Claude Code、安全研究路线与公司进展的持续追踪。",
+      "definition": "大华股份及其子品牌（华睿科技、乐橙）的全部动态：产品线与固件更新、经营与项目、技术路线的持续追踪。",
       "related": [
-        "openai",
-        "google",
-        "safety"
+        "hikvision",
+        "uniview",
+        "product-releases"
       ]
     },
     {
-      "slug": "google",
-      "name": "Google / Gemini",
+      "slug": "uniview",
+      "name": "宇视科技",
       "group": "company",
-      "entityId": "google",
+      "entityId": "uniview",
       "tags": [
-        "Google",
-        "DeepMind",
-        "entity:google"
+        "宇视科技",
+        "entity:uniview"
       ],
-      "definition": "Google 与 DeepMind 的 AI 动态：Gemini 系列、Veo 视频模型、研究成果与产品生态的持续追踪。",
+      "definition": "宇视科技（Uniview / UNV）的产品发布、平台迭代、经营与项目动态的持续追踪。",
       "related": [
-        "openai",
-        "anthropic",
-        "multimodal"
+        "hikvision",
+        "dahua",
+        "product-releases"
       ]
     },
     {
-      "slug": "deepseek",
-      "name": "DeepSeek",
+      "slug": "huawei",
+      "name": "华为机器视觉",
       "group": "company",
-      "entityId": "deepseek",
+      "entityId": "huawei",
       "tags": [
-        "DeepSeek",
-        "entity:deepseek"
+        "华为机器视觉",
+        "entity:huawei"
       ],
-      "definition": "DeepSeek（深度求索）的模型发布、开源权重与技术报告——开源大模型价格与性能双卷的风向标。",
+      "definition": "华为机器视觉（好望 HoloSens）的产品线、软件定义摄像机路线与生态合作动态。",
       "related": [
-        "qwen",
-        "open-source",
-        "model-releases"
+        "hikvision",
+        "edge-ai",
+        "product-releases"
       ]
     },
     {
-      "slug": "qwen",
-      "name": "千问 Qwen",
+      "slug": "tiandy",
+      "name": "天地伟业",
       "group": "company",
-      "entityId": "qwen",
+      "entityId": "tiandy",
       "tags": [
-        "entity:qwen"
+        "天地伟业",
+        "entity:tiandy"
       ],
-      "definition": "阿里千问 Qwen 系列的开源发布与迭代：从旗舰模型到端侧小模型的全谱系动态。",
+      "definition": "天地伟业（Tiandy）的产品发布、技术路线与项目动态。",
       "related": [
-        "deepseek",
-        "kimi",
-        "open-source"
+        "hikvision",
+        "dahua",
+        "low-light"
       ]
     },
     {
-      "slug": "kimi",
-      "name": "Kimi / 月之暗面",
+      "slug": "ezviz",
+      "name": "萤石网络",
       "group": "company",
-      "entityId": "kimi",
+      "entityId": "ezviz",
       "tags": [
-        "entity:kimi"
+        "萤石网络",
+        "entity:ezviz"
       ],
-      "definition": "月之暗面 Kimi 系列模型与产品动态：K 系列开源模型、长上下文技术与产品演进的追踪。",
+      "definition": "萤石网络（EZVIZ）的家用与消费级产品、云平台与经营动态。",
       "related": [
-        "qwen",
-        "deepseek",
-        "minimax"
+        "imou",
+        "projects-scene",
+        "product-releases"
       ]
     },
     {
-      "slug": "minimax",
-      "name": "MiniMax",
+      "slug": "imou",
+      "name": "乐橙 Imou",
       "group": "company",
-      "entityId": "minimax",
+      "entityId": "imou",
       "tags": [
-        "entity:minimax"
+        "乐橙",
+        "entity:imou"
       ],
-      "definition": "MiniMax 的模型与产品动态：M 系列大模型、语音与多模态能力、开源与商业化进展。",
+      "definition": "大华乐橙（Imou）的消费级与中小企业产品线、云平台动态。",
       "related": [
-        "kimi",
-        "qwen",
-        "voice"
+        "ezviz",
+        "projects-scene",
+        "dahua"
       ]
     },
     {
-      "slug": "zhipu",
-      "name": "智谱 GLM",
+      "slug": "axis",
+      "name": "Axis 安讯士",
       "group": "company",
-      "entityId": "zhipu",
+      "entityId": "axis",
       "tags": [
-        "entity:zhipu"
+        "Axis",
+        "entity:axis"
       ],
-      "definition": "智谱的 GLM 系列模型动态：旗舰开源发布、代码与推理能力迭代、商业化与生态进展的追踪。",
+      "definition": "Axis（安讯士）的网络摄像机产品线、芯片路线与海外标准与安全实践。",
       "related": [
-        "qwen",
-        "kimi",
-        "open-source"
+        "bosch",
+        "hanwha",
+        "product-releases"
       ]
     },
     {
-      "slug": "xai",
-      "name": "xAI / Grok",
+      "slug": "bosch",
+      "name": "Bosch 博世",
       "group": "company",
-      "entityId": "xai",
+      "entityId": "bosch",
       "tags": [
-        "xAI",
-        "entity:xai"
+        "Bosch",
+        "entity:bosch"
       ],
-      "definition": "马斯克 xAI 与 Grok 系列的全部动态：模型迭代、算力扩张与 X 平台整合的持续追踪。",
+      "definition": "Bosch 安防与视频系统产品线、报警与门禁方案动态。",
       "related": [
-        "openai",
-        "meta",
-        "industry"
+        "axis",
+        "hanwha",
+        "access-control"
       ]
     },
     {
-      "slug": "meta",
-      "name": "Meta / Llama",
+      "slug": "hanwha",
+      "name": "Hanwha Vision",
       "group": "company",
-      "entityId": "meta",
+      "entityId": "hanwha",
       "tags": [
-        "Meta",
-        "entity:meta"
+        "Hanwha",
+        "entity:hanwha"
       ],
-      "definition": "Meta 的 AI 动态：Llama 开源模型系列、超级智能实验室与元宇宙之外的 AI 豪赌。",
+      "definition": "Hanwha Vision（韩华，原 Hanwha Techwin）的 Wisenet 产品线与成像技术动态。",
       "related": [
-        "xai",
-        "open-source",
-        "industry"
+        "axis",
+        "bosch",
+        "low-light"
       ]
     },
     {
-      "slug": "microsoft",
-      "name": "Microsoft / Copilot",
+      "slug": "milestone",
+      "name": "Milestone",
       "group": "company",
-      "entityId": "microsoft",
+      "entityId": "milestone",
       "tags": [
-        "Microsoft",
-        "entity:microsoft"
+        "Milestone",
+        "entity:milestone"
       ],
-      "definition": "微软的 AI 布局：Copilot 全家桶、Azure AI 基础设施与 OpenAI 合作关系的持续追踪。",
+      "definition": "Milestone Systems 的 VMS 平台、开放架构与集成生态动态。",
       "related": [
-        "openai",
-        "coding",
-        "product-updates"
+        "genetec",
+        "video-surveillance",
+        "interoperability"
       ]
     },
     {
-      "slug": "nvidia",
-      "name": "NVIDIA 英伟达",
+      "slug": "genetec",
+      "name": "Genetec",
       "group": "company",
-      "entityId": "nvidia",
+      "entityId": "genetec",
       "tags": [
-        "entity:nvidia"
+        "Genetec",
+        "entity:genetec"
       ],
-      "definition": "英伟达的 AI 芯片与生态动态：GPU 新品、CUDA 生态、机器人平台与 AI 算力市场的风向。",
+      "definition": "Genetec 的统一安防平台（视频、门禁、报警、车牌识别）产品与项目动态。",
       "related": [
-        "engineering",
-        "industry",
-        "embodied"
+        "milestone",
+        "video-surveillance",
+        "anpr"
       ]
     },
     {
-      "slug": "hugging-face",
-      "name": "Hugging Face",
+      "slug": "mps",
+      "name": "公安部",
       "group": "company",
-      "entityId": "hugging-face",
+      "entityId": "mps",
       "tags": [
-        "Hugging Face",
-        "entity:hugging-face"
+        "公安部",
+        "entity:mps"
       ],
-      "definition": "Hugging Face 开源社区动态：热门模型与数据集、排行榜变化与开源生态的晴雨表。",
+      "definition": "公安部及其研究所的政策、标准归口、检测与行业管理动态。",
       "related": [
-        "open-source",
-        "model-releases",
-        "data-training"
+        "standards",
+        "policy",
+        "csppi"
       ]
     },
     {
-      "slug": "cursor",
-      "name": "Cursor",
+      "slug": "samr",
+      "name": "市场监管总局",
       "group": "company",
-      "entityId": "cursor",
+      "entityId": "samr",
       "tags": [
-        "entity:cursor"
+        "市场监管总局",
+        "entity:samr"
       ],
-      "definition": "Cursor 编辑器的产品迭代与生态动态——AI 编码工具竞争中最受关注的玩家之一。",
+      "definition": "国家市场监督管理总局与认监委的强制性国标、认证与抽查监管动态。",
       "related": [
-        "coding",
-        "agent",
-        "product-updates"
+        "standards",
+        "certification",
+        "policy"
       ]
     },
     {
-      "slug": "openrouter",
-      "name": "OpenRouter",
+      "slug": "cac",
+      "name": "网信办",
       "group": "company",
-      "entityId": "openrouter",
+      "entityId": "cac",
       "tags": [
-        "entity:openrouter"
+        "网信办",
+        "entity:cac"
       ],
-      "definition": "OpenRouter 模型路由平台动态：新模型上架、用量排行与开发者选型的真实市场信号。",
+      "definition": "中央网信办关于数据安全、个人信息保护与视频数据合规的要求与执法动态。",
       "related": [
-        "engineering",
-        "model-releases",
-        "open-source"
+        "data-security",
+        "policy",
+        "face-recognition"
       ]
     },
     {
-      "slug": "agent",
-      "name": "Agent 智能体",
+      "slug": "miit",
+      "name": "工信部",
+      "group": "company",
+      "entityId": "miit",
+      "tags": [
+        "工信部",
+        "entity:miit"
+      ],
+      "definition": "工业和信息化部关于物联网、通信模组、产业规划与准入的动态。",
+      "related": [
+        "policy",
+        "interoperability",
+        "standards"
+      ]
+    },
+    {
+      "slug": "csppi",
+      "name": "中国安防协会",
+      "group": "company",
+      "entityId": "csppi",
+      "tags": [
+        "中国安防协会",
+        "entity:csppi"
+      ],
+      "definition": "中国安全防范产品行业协会的团标、行业统计、展会与会员动态。",
+      "related": [
+        "standards",
+        "exhibitions",
+        "industry-news"
+      ]
+    },
+    {
+      "slug": "video-surveillance",
+      "name": "视频监控",
       "group": "field",
       "tags": [
-        "Agent"
+        "视频监控"
       ],
-      "definition": "让模型自主规划、调用工具、完成多步任务的技术方向——从 Claude Code、Manus 到各家 Agent 框架与评测基准的全部动态。",
+      "definition": "摄像机、NVR、存储与平台构成的视频监控主线：成像、码流、通道与录像的全部技术动态。",
       "related": [
-        "mcp",
-        "coding",
-        "reasoning"
+        "low-light",
+        "codec",
+        "edge-ai"
       ]
     },
     {
-      "slug": "coding",
-      "name": "AI 编码",
-      "group": "field",
-      "tags": [
-        "编码"
-      ],
-      "definition": "AI 写代码的一切：编码助手、Vibe Coding、代码模型评测与开发工作流变革。",
-      "related": [
-        "agent",
-        "cursor",
-        "tutorials"
-      ]
-    },
-    {
-      "slug": "reasoning",
-      "name": "推理能力",
-      "group": "field",
-      "tags": [
-        "推理"
-      ],
-      "definition": "模型推理能力的进展：思维链、推理模型、数学与逻辑基准的突破与争议。",
-      "related": [
-        "papers",
-        "model-releases",
-        "agent"
-      ]
-    },
-    {
-      "slug": "multimodal",
-      "name": "多模态",
-      "group": "field",
-      "tags": [
-        "多模态"
-      ],
-      "definition": "文本之外的能力：视觉理解、图文混合、音视频输入输出的模型与产品进展。",
-      "related": [
-        "image-gen",
-        "video",
-        "voice"
-      ]
-    },
-    {
-      "slug": "image-gen",
-      "name": "图像生成",
-      "group": "field",
-      "tags": [
-        "图像生成"
-      ],
-      "definition": "AI 画图的最前线：文生图模型迭代、图像编辑能力与创作工具生态的全部动态。",
-      "related": [
-        "video",
-        "multimodal",
-        "product-updates"
-      ]
-    },
-    {
-      "slug": "video",
-      "name": "AI 视频",
-      "group": "field",
-      "tags": [
-        "视频"
-      ],
-      "definition": "AI 视频生成与理解：文生视频模型、视频编辑工具与影视创作变革的追踪。",
-      "related": [
-        "image-gen",
-        "multimodal",
-        "voice"
-      ]
-    },
-    {
-      "slug": "voice",
-      "name": "语音与音频",
-      "group": "field",
-      "tags": [
-        "语音"
-      ],
-      "definition": "AI 语音与音频的进展：语音合成、实时对话、音乐生成与音频理解的模型与产品。",
-      "related": [
-        "multimodal",
-        "video",
-        "product-updates"
-      ]
-    },
-    {
-      "slug": "embodied",
-      "name": "具身智能",
-      "group": "field",
-      "tags": [
-        "具身智能"
-      ],
-      "definition": "AI 走进物理世界：人形机器人、具身基础模型与真实环境操作能力的进展追踪。",
-      "related": [
-        "nvidia",
-        "multimodal",
-        "papers"
-      ]
-    },
-    {
-      "slug": "on-device",
+      "slug": "edge-ai",
       "name": "端侧 AI",
       "group": "field",
       "tags": [
-        "端侧"
+        "端侧AI"
       ],
-      "definition": "跑在手机、电脑与边缘设备上的 AI：小模型、本地推理与端侧芯片的进展。",
+      "definition": "在设备端运行的智能分析：SoC 与 NPU、算法上端、模型裁剪与端云协同的全部动态。",
       "related": [
-        "engineering",
-        "open-source",
-        "model-releases"
+        "video-analytics",
+        "video-surveillance"
       ]
     },
     {
-      "slug": "open-source",
-      "name": "开源生态",
+      "slug": "video-analytics",
+      "name": "视频智能分析",
       "group": "field",
       "tags": [
-        "开源生态",
-        "开源/仓库"
+        "行为分析",
+        "视频结构化"
       ],
-      "definition": "开源模型、框架与仓库动态：权重开放、社区项目爆火、开源与闭源的力量消长。",
+      "definition": "行为分析、目标检测、视频结构化与跨镜追踪：算法能力、误报控制与实战效果。",
       "related": [
-        "model-releases",
-        "hugging-face",
-        "coding"
+        "edge-ai",
+        "face-recognition",
+        "perimeter"
       ]
     },
     {
-      "slug": "engineering",
-      "name": "部署工程",
+      "slug": "low-light",
+      "name": "低照度成像",
       "group": "field",
       "tags": [
-        "部署/工程"
+        "低照度",
+        "图像算法"
       ],
-      "definition": "把模型跑起来的工程实践：推理优化、显存与成本、Serving 架构与基础设施选型。",
+      "definition": "星光级、全彩夜视、大光圈与传感器技术：照度指标、实测对比与成像算法进展。",
       "related": [
-        "open-source",
-        "data-training",
-        "on-device"
+        "video-surveillance",
+        "thermal",
+        "image-sensor"
       ]
     },
     {
-      "slug": "data-training",
-      "name": "数据与训练",
+      "slug": "thermal",
+      "name": "热成像与测温",
       "group": "field",
       "tags": [
-        "数据/训练"
+        "热成像"
       ],
-      "definition": "训练侧的门道：数据集构建、合成数据、预训练与后训练方法、算力与训练成本。",
+      "definition": "非制冷红外、热成像机芯、测温与雷视/热可见光融合的技术与产品动态。",
       "related": [
-        "papers",
-        "engineering",
-        "model-releases"
+        "mmwave-radar",
+        "perimeter",
+        "low-light"
       ]
     },
     {
-      "slug": "safety",
-      "name": "安全对齐",
+      "slug": "mmwave-radar",
+      "name": "毫米波雷达",
       "group": "field",
       "tags": [
-        "安全/对齐"
+        "毫米波雷达"
       ],
-      "definition": "AI 安全与对齐：越狱与防御、模型行为研究、安全评测与治理框架的进展。",
+      "definition": "毫米波雷达与雷视融合：周界检测、交通感知、跌倒检测与隐私友好方案的动态。",
       "related": [
-        "papers",
+        "perimeter",
+        "thermal",
+        "traffic"
+      ]
+    },
+    {
+      "slug": "perimeter",
+      "name": "周界防范",
+      "group": "field",
+      "tags": [
+        "周界防范",
+        "报警探测"
+      ],
+      "definition": "周界入侵检测、电子围栏、报警探测与误报抑制的产品与技术动态。",
+      "related": [
+        "mmwave-radar",
+        "video-analytics"
+      ]
+    },
+    {
+      "slug": "access-control",
+      "name": "门禁与对讲",
+      "group": "field",
+      "tags": [
+        "门禁对讲"
+      ],
+      "definition": "门禁控制、可视对讲、生物识别通行与楼宇联动系统的产品与标准动态。",
+      "related": [
+        "face-recognition",
+        "data-security",
+        "standards"
+      ]
+    },
+    {
+      "slug": "face-recognition",
+      "name": "人脸识别",
+      "group": "field",
+      "tags": [
+        "人脸识别"
+      ],
+      "definition": "人脸识别技术、合规要求、个人信息保护约束与实际落地的全部动态。",
+      "related": [
+        "data-security",
+        "access-control",
+        "policy"
+      ]
+    },
+    {
+      "slug": "anpr",
+      "name": "车牌识别",
+      "group": "field",
+      "tags": [
+        "车牌识别"
+      ],
+      "definition": "车牌识别与车辆结构化：识别率、场景适配、交通卡口与停车应用动态。",
+      "related": [
+        "traffic",
+        "video-analytics"
+      ]
+    },
+    {
+      "slug": "codec",
+      "name": "编解码与传输",
+      "group": "field",
+      "tags": [
+        "编解码"
+      ],
+      "definition": "H.265 / H.266 / AVS 系列编码、码率优化、传输协议与带宽成本的技术动态。",
+      "related": [
+        "video-surveillance",
+        "interoperability",
+        "cloud-storage"
+      ]
+    },
+    {
+      "slug": "interoperability",
+      "name": "互联与协议",
+      "group": "field",
+      "tags": [
+        "ONVIF/GB28181",
+        "物联网协议"
+      ],
+      "definition": "ONVIF、GB/T 28181、GB 35114 与各类物联网协议的兼容性、安全要求与互通实践。",
+      "related": [
+        "standards",
+        "data-security",
+        "codec"
+      ]
+    },
+    {
+      "slug": "cloud-storage",
+      "name": "云存储与边缘计算",
+      "group": "field",
+      "tags": [
+        "云存储",
+        "边缘计算"
+      ],
+      "definition": "视频云存储、边缘节点、云边协同与录像保留策略的技术与商业动态。",
+      "related": [
+        "video-surveillance",
+        "codec",
+        "data-security"
+      ]
+    },
+    {
+      "slug": "low-power",
+      "name": "低功耗与电池供电",
+      "group": "field",
+      "tags": [
+        "低功耗/电池"
+      ],
+      "definition": "电池供电设备、唤醒机制、太阳能供电与功耗优化的产品与技术动态。",
+      "related": [
+        "projects-scene",
+        "edge-ai",
+        "product-releases"
+      ]
+    },
+    {
+      "slug": "image-sensor",
+      "name": "芯片与传感器",
+      "group": "field",
+      "tags": [
+        "端侧AI"
+      ],
+      "definition": "安防 SoC、图像传感器、编解码芯片的供应、价格、替代方案与国产化进展。",
+      "related": [
+        "edge-ai",
+        "low-light",
+        "industry-news"
+      ]
+    },
+    {
+      "slug": "traffic",
+      "name": "智慧交通感知",
+      "group": "field",
+      "tags": [
+        "交通"
+      ],
+      "definition": "卡口、电警、交通流检测、车路协同与道路感知设备的方案与项目动态。",
+      "related": [
+        "anpr",
+        "mmwave-radar",
+        "tenders"
+      ]
+    },
+    {
+      "slug": "product-releases",
+      "name": "产品发布",
+      "group": "genre",
+      "tags": [
+        "产品发布",
+        "固件/软件更新"
+      ],
+      "definition": "新设备、新平台、新固件与重大功能更新的发布记录：参数、可用性与适配范围。",
+      "related": [
+        "edge-ai",
+        "low-light",
+        "tech-advance"
+      ]
+    },
+    {
+      "slug": "standards",
+      "name": "标准发布",
+      "group": "genre",
+      "tags": [
+        "标准发布"
+      ],
+      "definition": "国标、行标、团标与国际标准的发布、报批、征求意见与修订：条文变化与执行时间。",
+      "related": [
+        "certification",
+        "interoperability",
+        "policy"
+      ]
+    },
+    {
+      "slug": "certification",
+      "name": "检测认证",
+      "group": "genre",
+      "tags": [
+        "检测认证"
+      ],
+      "definition": "产品检测、认证、抽查结果与合规要求：哪些项目要测、按哪个版本测。",
+      "related": [
+        "standards",
         "policy",
-        "reasoning"
+        "product-releases"
       ]
     },
     {
-      "slug": "mcp",
-      "name": "MCP 与工具调用",
-      "group": "field",
-      "tags": [
-        "MCP/工具调用"
-      ],
-      "definition": "模型连接外部世界的协议与实践：MCP 生态、function calling、工具链集成的动态。",
-      "related": [
-        "agent",
-        "coding",
-        "open-source"
-      ]
-    },
-    {
-      "slug": "model-releases",
-      "name": "模型发布",
+      "slug": "policy",
+      "name": "政策与监管",
       "group": "genre",
       "tags": [
-        "模型发布"
+        "政策/监管"
       ],
-      "definition": "新模型的发布、开源与迭代：大模型厂商的旗舰更新、开源权重放出、性能与价格变化的第一时间记录。",
+      "definition": "法律法规、部委通知、监管措施、执法处罚与行业准入要求的第一手记录。",
       "related": [
-        "product-updates",
-        "papers",
-        "open-source"
+        "data-security",
+        "standards",
+        "industry-news"
       ]
     },
     {
-      "slug": "product-updates",
-      "name": "产品更新",
+      "slug": "data-security",
+      "name": "数据安全与隐私",
       "group": "genre",
       "tags": [
-        "产品更新"
+        "数据安全"
       ],
-      "definition": "AI 产品与应用的功能上新、改版与商业化动态——谁家的产品变强了、变贵了、能用了。",
+      "definition": "视频数据、人脸与车牌信息的采集使用合规要求、安全事件与处罚案例。",
       "related": [
-        "model-releases",
-        "industry",
-        "coding"
+        "policy",
+        "face-recognition",
+        "interoperability"
       ]
     },
     {
-      "slug": "papers",
-      "name": "论文研究",
-      "group": "genre",
-      "tags": [
-        "论文/研究"
-      ],
-      "definition": "值得读的 AI 论文与研究成果：架构创新、训练方法、能力测量与理论进展的精选解读。",
-      "related": [
-        "reasoning",
-        "safety",
-        "data-training"
-      ]
-    },
-    {
-      "slug": "benchmarks",
-      "name": "评测基准",
-      "group": "genre",
-      "tags": [
-        "评测/基准"
-      ],
-      "definition": "模型到底谁强：Benchmark 成绩、评测方法论争议与排行榜变化的持续记录。",
-      "related": [
-        "model-releases",
-        "papers",
-        "reasoning"
-      ]
-    },
-    {
-      "slug": "tutorials",
-      "name": "教程实践",
-      "group": "genre",
-      "tags": [
-        "教程/实践"
-      ],
-      "definition": "拿来就能用的实操内容：提示词技巧、工作流搭建、工具用法与踩坑经验。",
-      "related": [
-        "coding",
-        "agent",
-        "product-updates"
-      ]
-    },
-    {
-      "slug": "opinions",
-      "name": "大佬观点",
-      "group": "genre",
-      "tags": [
-        "大佬观点"
-      ],
-      "definition": "行业关键人物在想什么：创始人访谈、研究者论战、投资人判断的观点集合。",
-      "related": [
-        "trends",
-        "industry"
-      ]
-    },
-    {
-      "slug": "trends",
-      "name": "现象与趋势",
-      "group": "genre",
-      "tags": [
-        "现象/趋势"
-      ],
-      "definition": "正在发生的行业级变化：使用习惯迁移、能力涌现、社会影响与市场格局的观察。",
-      "related": [
-        "opinions",
-        "industry",
-        "safety"
-      ]
-    },
-    {
-      "slug": "industry",
+      "slug": "industry-news",
       "name": "行业动态",
       "group": "genre",
       "tags": [
         "行业动态"
       ],
-      "definition": "AI 行业的商业脉搏：融资并购、人事变动、合作与竞争、政策与市场信号。",
+      "definition": "经营、财报、融资并购、人事、合作与市场数据：影响行业格局的商业事实。",
       "related": [
-        "trends",
-        "opinions",
-        "policy"
+        "tenders",
+        "exhibitions",
+        "opinions"
       ]
     },
     {
-      "slug": "policy",
-      "name": "政策监管",
+      "slug": "tenders",
+      "name": "招投标与项目",
       "group": "genre",
       "tags": [
-        "政策/监管"
+        "招投标/项目",
+        "应用场景"
       ],
-      "definition": "AI 相关政策法规与政府监管动态：立法进展、出口管制与全球治理框架的追踪。",
+      "definition": "招标中标、工程落地、试点项目与实效数据：规模、范围与技术要求。",
       "related": [
-        "industry",
-        "safety",
-        "trends"
+        "industry-news",
+        "projects-scene",
+        "traffic"
+      ]
+    },
+    {
+      "slug": "projects-scene",
+      "name": "场景落地",
+      "group": "genre",
+      "tags": [
+        "应用场景",
+        "商用企业级",
+        "家用消费级"
+      ],
+      "definition": "园区、社区、交通、零售、工厂、校园、医院等场景的方案落地与实际效果。",
+      "related": [
+        "tenders",
+        "traffic",
+        "edge-ai"
+      ]
+    },
+    {
+      "slug": "exhibitions",
+      "name": "展会与活动",
+      "group": "genre",
+      "tags": [
+        "展会/活动"
+      ],
+      "definition": "CPSE、安博会、Intersec、ISC West 等展会上首次公开的产品、技术与行业信号。",
+      "related": [
+        "product-releases",
+        "opinions",
+        "industry-news"
+      ]
+    },
+    {
+      "slug": "opinions",
+      "name": "观点与分析",
+      "group": "genre",
+      "tags": [
+        "观点/分析"
+      ],
+      "definition": "趋势判断、专家访谈、行业复盘与深度分析：有独立信息量的观点内容。",
+      "related": [
+        "tech-advance",
+        "industry-news",
+        "reviews"
+      ]
+    },
+    {
+      "slug": "reviews",
+      "name": "评测与对比",
+      "group": "genre",
+      "tags": [
+        "评测/对比",
+        "技术进展"
+      ],
+      "definition": "独立实测、参数对比、选型评测与技术进展解读：可用于选型与对标的内容。",
+      "related": [
+        "low-light",
+        "edge-ai",
+        "product-releases"
+      ]
+    },
+    {
+      "slug": "tech-advance",
+      "name": "技术进展",
+      "group": "genre",
+      "tags": [
+        "技术进展"
+      ],
+      "definition": "算法、成像、编解码、芯片与工程实现的进展，以及可迁移到其他项目的方法。",
+      "related": [
+        "edge-ai",
+        "video-analytics",
+        "reviews"
       ]
     }
   ]
