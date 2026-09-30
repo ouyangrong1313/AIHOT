@@ -21,6 +21,9 @@ interface ItemIn {
   url?: unknown;
   publishedAt?: unknown;
   author?: unknown;
+  /** List-page summary. Stored as the excerpt; callers without a body pass it so analysis runs
+   *  on title+summary instead of waiting for a page fetch that may never succeed. */
+  summary?: unknown;
   raw?: { _aihot?: { backfill?: boolean; baseline?: boolean } } & Record<string, unknown>;
 }
 
@@ -52,6 +55,7 @@ export async function ingestItems(body: { sourceId?: unknown; sourceName?: unkno
     if (!url || seen.has(url)) continue;
     seen.add(url);
     const published = typeof it.publishedAt === "string" ? new Date(it.publishedAt) : null;
+    const summary = typeof it.summary === "string" && it.summary.trim() ? it.summary.trim().slice(0, 2000) : null;
     const flags = it.raw?._aihot ?? {};
     const res = await upsertMaterial({
       sourceId: source!.id,
@@ -59,6 +63,9 @@ export async function ingestItems(body: { sourceId?: unknown; sourceName?: unkno
       title,
       author: typeof it.author === "string" ? it.author.slice(0, 200) : null,
       publishedAt: published && Number.isFinite(published.getTime()) ? published : null,
+      excerpt: summary,
+      // A caller that supplies only a list summary has no body to wait for; analyse on the summary.
+      bodyStatus: summary ? "none" : undefined,
       raw: it.raw ?? null,
       via: "ingest",
       backfill: flags.backfill ? "reported-backfill" : flags.baseline ? "reported-baseline" : null,
