@@ -303,8 +303,16 @@ export async function catchUpReports(now = new Date(), days = 7): Promise<{ gene
     if (shutdownSignal.signal.aborted) return { generated }; // the next hourly run continues
     const d = addDays(latestDue, -i);
     if (first?.key && d < first.key) continue;
-    const [exists] = await sql`SELECT 1 FROM reports WHERE kind = 'daily' AND key = ${d}`;
-    if (!exists) {
+    const [row] = await sql<{ empty: boolean }[]>`
+      SELECT (content->'sections' IS NULL
+              OR jsonb_array_length(coalesce(content->'sections', '[]'::jsonb)) = 0)
+             AND jsonb_array_length(coalesce(content->'flashes', '[]'::jsonb)) = 0 AS empty
+      FROM reports WHERE kind = 'daily' AND key = ${d}`;
+    // An earned-but-empty edition (composed before its window had content) is retried: the 08:00 run
+    // writes an empty record, and an exists-only check would then skip it forever.
+    const missing = !row;
+    const emptyRetry = !!row?.empty;
+    if (missing || emptyRetry) {
       await composeDaily(d, "catch-up");
       generated.push(`daily:${d}`);
     }
