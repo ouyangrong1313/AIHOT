@@ -1,5 +1,4 @@
 {
-  "exportedAt": "2026-09-29",
   "groups": [
     {
       "key": "company",
@@ -22,831 +21,470 @@
       "slug": "hikvision",
       "name": "海康威视",
       "group": "company",
-      "entityId": "hikvision",
-      "tags": [
-        "海康威视",
-        "entity:hikvision"
-      ],
       "definition": "海康威视及其子品牌（海康机器人、海康汽车电子、海康微影）的全部动态：产品线与固件更新、经营与项目、技术路线的持续追踪。",
-      "related": [
-        "dahua",
-        "uniview",
-        "product-releases"
-      ]
+      "entityId": "hikvision"
     },
     {
       "slug": "dahua",
       "name": "大华股份",
       "group": "company",
-      "entityId": "dahua",
-      "tags": [
-        "大华股份",
-        "entity:dahua"
-      ],
       "definition": "大华股份及其子品牌（华睿科技、乐橙）的全部动态：产品线与固件更新、经营与项目、技术路线的持续追踪。",
-      "related": [
-        "hikvision",
-        "uniview",
-        "product-releases"
-      ]
+      "entityId": "dahua"
     },
     {
       "slug": "uniview",
       "name": "宇视科技",
       "group": "company",
-      "entityId": "uniview",
-      "tags": [
-        "宇视科技",
-        "entity:uniview"
-      ],
       "definition": "宇视科技（Uniview / UNV）的产品发布、平台迭代、经营与项目动态的持续追踪。",
-      "related": [
-        "hikvision",
-        "dahua",
-        "product-releases"
-      ]
+      "entityId": "uniview"
     },
     {
       "slug": "huawei",
       "name": "华为机器视觉",
       "group": "company",
-      "entityId": "huawei",
-      "tags": [
-        "华为机器视觉",
-        "entity:huawei"
-      ],
       "definition": "华为机器视觉（好望 HoloSens）的产品线、软件定义摄像机路线与生态合作动态。",
-      "related": [
-        "hikvision",
-        "edge-ai",
-        "product-releases"
-      ]
+      "entityId": "huawei"
     },
     {
       "slug": "tiandy",
       "name": "天地伟业",
       "group": "company",
-      "entityId": "tiandy",
-      "tags": [
-        "天地伟业",
-        "entity:tiandy"
-      ],
       "definition": "天地伟业（Tiandy）的产品发布、技术路线与项目动态。",
-      "related": [
-        "hikvision",
-        "dahua",
-        "low-light"
-      ]
+      "entityId": "tiandy"
     },
     {
       "slug": "ezviz",
       "name": "萤石网络",
       "group": "company",
-      "entityId": "ezviz",
-      "tags": [
-        "萤石网络",
-        "entity:ezviz"
-      ],
       "definition": "萤石网络（EZVIZ）的家用与消费级产品、云平台与经营动态。",
-      "related": [
-        "imou",
-        "projects-scene",
-        "product-releases"
-      ]
+      "entityId": "ezviz"
     },
     {
       "slug": "imou",
       "name": "乐橙 Imou",
       "group": "company",
-      "entityId": "imou",
-      "tags": [
-        "乐橙",
-        "entity:imou"
-      ],
       "definition": "大华乐橙（Imou）的消费级与中小企业产品线、云平台动态。",
-      "related": [
-        "ezviz",
-        "projects-scene",
-        "dahua"
+      "entityId": "imou",
+      "aliases": [
+        "乐橙"
       ]
     },
     {
       "slug": "axis",
       "name": "Axis 安讯士",
       "group": "company",
-      "entityId": "axis",
-      "tags": [
-        "Axis",
-        "entity:axis"
-      ],
       "definition": "Axis（安讯士）的网络摄像机产品线、芯片路线与海外标准与安全实践。",
-      "related": [
-        "bosch",
-        "hanwha",
-        "product-releases"
+      "entityId": "axis",
+      "aliases": [
+        "Axis"
       ]
     },
     {
       "slug": "bosch",
       "name": "Bosch 博世",
       "group": "company",
-      "entityId": "bosch",
-      "tags": [
-        "Bosch",
-        "entity:bosch"
-      ],
       "definition": "Bosch 安防与视频系统产品线、报警与门禁方案动态。",
-      "related": [
-        "axis",
-        "hanwha",
-        "access-control"
+      "entityId": "bosch",
+      "aliases": [
+        "Bosch"
       ]
     },
     {
       "slug": "hanwha",
       "name": "Hanwha Vision",
       "group": "company",
-      "entityId": "hanwha",
-      "tags": [
-        "Hanwha",
-        "entity:hanwha"
-      ],
       "definition": "Hanwha Vision（韩华，原 Hanwha Techwin）的 Wisenet 产品线与成像技术动态。",
-      "related": [
-        "axis",
-        "bosch",
-        "low-light"
+      "entityId": "hanwha",
+      "aliases": [
+        "Hanwha"
       ]
     },
     {
       "slug": "milestone",
       "name": "Milestone",
       "group": "company",
-      "entityId": "milestone",
-      "tags": [
-        "Milestone",
-        "entity:milestone"
-      ],
       "definition": "Milestone Systems 的 VMS 平台、开放架构与集成生态动态。",
-      "related": [
-        "genetec",
-        "video-surveillance",
-        "interoperability"
-      ]
+      "entityId": "milestone"
     },
     {
       "slug": "genetec",
       "name": "Genetec",
       "group": "company",
-      "entityId": "genetec",
-      "tags": [
-        "Genetec",
-        "entity:genetec"
-      ],
       "definition": "Genetec 的统一安防平台（视频、门禁、报警、车牌识别）产品与项目动态。",
-      "related": [
-        "milestone",
-        "video-surveillance",
-        "anpr"
-      ]
+      "entityId": "genetec"
     },
     {
       "slug": "mps",
       "name": "公安部",
       "group": "company",
-      "entityId": "mps",
-      "tags": [
-        "公安部",
-        "entity:mps"
-      ],
       "definition": "公安部及其研究所的政策、标准归口、检测与行业管理动态。",
-      "related": [
-        "standards",
-        "policy",
-        "csppi"
-      ]
+      "entityId": "mps"
     },
     {
       "slug": "samr",
       "name": "市场监管总局",
       "group": "company",
-      "entityId": "samr",
-      "tags": [
-        "市场监管总局",
-        "entity:samr"
-      ],
       "definition": "国家市场监督管理总局与认监委的强制性国标、认证与抽查监管动态。",
-      "related": [
-        "standards",
-        "certification",
-        "policy"
-      ]
+      "entityId": "samr"
     },
     {
       "slug": "cac",
       "name": "网信办",
       "group": "company",
-      "entityId": "cac",
-      "tags": [
-        "网信办",
-        "entity:cac"
-      ],
       "definition": "中央网信办关于数据安全、个人信息保护与视频数据合规的要求与执法动态。",
-      "related": [
-        "data-security",
-        "policy",
-        "face-recognition"
-      ]
+      "entityId": "cac"
     },
     {
       "slug": "miit",
       "name": "工信部",
       "group": "company",
-      "entityId": "miit",
-      "tags": [
-        "工信部",
-        "entity:miit"
-      ],
       "definition": "工业和信息化部关于物联网、通信模组、产业规划与准入的动态。",
-      "related": [
-        "policy",
-        "interoperability",
-        "standards"
-      ]
+      "entityId": "miit"
     },
     {
       "slug": "csppi",
       "name": "中国安防协会",
       "group": "company",
-      "entityId": "csppi",
-      "tags": [
-        "中国安防协会",
-        "entity:csppi"
-      ],
       "definition": "中国安全防范产品行业协会的团标、行业统计、展会与会员动态。",
-      "related": [
-        "standards",
-        "exhibitions",
-        "industry-news"
-      ]
+      "entityId": "csppi"
     },
     {
       "slug": "video-surveillance",
       "name": "视频监控",
       "group": "field",
+      "definition": "摄像机、NVR、存储与平台构成的视频监控主线：成像、码流、通道与录像的全部技术动态。",
       "tags": [
         "视频监控"
-      ],
-      "definition": "摄像机、NVR、存储与平台构成的视频监控主线：成像、码流、通道与录像的全部技术动态。",
-      "related": [
-        "low-light",
-        "codec",
-        "edge-ai"
       ]
     },
     {
       "slug": "edge-ai",
       "name": "端侧 AI",
       "group": "field",
+      "definition": "在设备端运行的智能分析：SoC 与 NPU、算法上端、模型裁剪与端云协同的全部动态。",
       "tags": [
         "端侧AI"
-      ],
-      "definition": "在设备端运行的智能分析：SoC 与 NPU、算法上端、模型裁剪与端云协同的全部动态。",
-      "related": [
-        "video-analytics",
-        "video-surveillance"
       ]
     },
     {
       "slug": "video-analytics",
       "name": "视频智能分析",
       "group": "field",
+      "definition": "行为分析、目标检测、视频结构化与跨镜追踪：算法能力、误报控制与实战效果。",
       "tags": [
         "行为分析",
         "视频结构化"
-      ],
-      "definition": "行为分析、目标检测、视频结构化与跨镜追踪：算法能力、误报控制与实战效果。",
-      "related": [
-        "edge-ai",
-        "face-recognition",
-        "perimeter"
       ]
     },
     {
       "slug": "low-light",
       "name": "低照度成像",
       "group": "field",
+      "definition": "星光级、全彩夜视、大光圈与传感器技术：照度指标、实测对比与成像算法进展。",
       "tags": [
         "低照度",
         "图像算法"
-      ],
-      "definition": "星光级、全彩夜视、大光圈与传感器技术：照度指标、实测对比与成像算法进展。",
-      "related": [
-        "video-surveillance",
-        "thermal",
-        "image-sensor"
       ]
     },
     {
       "slug": "thermal",
       "name": "热成像与测温",
       "group": "field",
+      "definition": "非制冷红外、热成像机芯、测温与雷视/热可见光融合的技术与产品动态。",
       "tags": [
         "热成像"
-      ],
-      "definition": "非制冷红外、热成像机芯、测温与雷视/热可见光融合的技术与产品动态。",
-      "related": [
-        "mmwave-radar",
-        "perimeter",
-        "low-light"
       ]
     },
     {
       "slug": "mmwave-radar",
       "name": "毫米波雷达",
       "group": "field",
+      "definition": "毫米波雷达与雷视融合：周界检测、交通感知、跌倒检测与隐私友好方案的动态。",
       "tags": [
         "毫米波雷达"
-      ],
-      "definition": "毫米波雷达与雷视融合：周界检测、交通感知、跌倒检测与隐私友好方案的动态。",
-      "related": [
-        "perimeter",
-        "thermal",
-        "traffic"
       ]
     },
     {
       "slug": "perimeter",
       "name": "周界防范",
       "group": "field",
+      "definition": "周界入侵检测、电子围栏、报警探测与误报抑制的产品与技术动态。",
       "tags": [
         "周界防范",
         "报警探测"
-      ],
-      "definition": "周界入侵检测、电子围栏、报警探测与误报抑制的产品与技术动态。",
-      "related": [
-        "mmwave-radar",
-        "video-analytics"
       ]
     },
     {
       "slug": "access-control",
       "name": "门禁与对讲",
       "group": "field",
+      "definition": "门禁控制、可视对讲、生物识别通行与楼宇联动系统的产品与标准动态。",
       "tags": [
         "门禁对讲"
-      ],
-      "definition": "门禁控制、可视对讲、生物识别通行与楼宇联动系统的产品与标准动态。",
-      "related": [
-        "face-recognition",
-        "data-security",
-        "standards"
       ]
     },
     {
       "slug": "face-recognition",
       "name": "人脸识别",
       "group": "field",
+      "definition": "人脸识别技术、合规要求、个人信息保护约束与实际落地的全部动态。",
       "tags": [
         "人脸识别"
-      ],
-      "definition": "人脸识别技术、合规要求、个人信息保护约束与实际落地的全部动态。",
-      "related": [
-        "data-security",
-        "access-control",
-        "policy"
       ]
     },
     {
       "slug": "anpr",
       "name": "车牌识别",
       "group": "field",
+      "definition": "车牌识别与车辆结构化：识别率、场景适配、交通卡口与停车应用动态。",
       "tags": [
         "车牌识别"
-      ],
-      "definition": "车牌识别与车辆结构化：识别率、场景适配、交通卡口与停车应用动态。",
-      "related": [
-        "traffic",
-        "video-analytics"
       ]
     },
     {
       "slug": "codec",
       "name": "编解码与传输",
       "group": "field",
+      "definition": "H.265 / H.266 / AVS 系列编码、码率优化、传输协议与带宽成本的技术动态。",
       "tags": [
         "编解码"
-      ],
-      "definition": "H.265 / H.266 / AVS 系列编码、码率优化、传输协议与带宽成本的技术动态。",
-      "related": [
-        "video-surveillance",
-        "interoperability",
-        "cloud-storage"
       ]
     },
     {
       "slug": "interoperability",
       "name": "互联与协议",
       "group": "field",
+      "definition": "ONVIF、GB/T 28181、GB 35114 与各类物联网协议的兼容性、安全要求与互通实践。",
       "tags": [
         "ONVIF/GB28181",
         "物联网协议"
-      ],
-      "definition": "ONVIF、GB/T 28181、GB 35114 与各类物联网协议的兼容性、安全要求与互通实践。",
-      "related": [
-        "standards",
-        "data-security",
-        "codec"
       ]
     },
     {
       "slug": "cloud-storage",
       "name": "云存储与边缘计算",
       "group": "field",
+      "definition": "视频云存储、边缘节点、云边协同与录像保留策略的技术与商业动态。",
       "tags": [
         "云存储",
         "边缘计算"
-      ],
-      "definition": "视频云存储、边缘节点、云边协同与录像保留策略的技术与商业动态。",
-      "related": [
-        "video-surveillance",
-        "codec",
-        "data-security"
       ]
     },
     {
       "slug": "low-power",
       "name": "低功耗与电池供电",
       "group": "field",
+      "definition": "电池供电设备、唤醒机制、太阳能供电与功耗优化的产品与技术动态。",
       "tags": [
         "低功耗/电池"
-      ],
-      "definition": "电池供电设备、唤醒机制、太阳能供电与功耗优化的产品与技术动态。",
-      "related": [
-        "projects-scene",
-        "edge-ai",
-        "product-releases"
       ]
     },
     {
       "slug": "image-sensor",
       "name": "芯片与传感器",
       "group": "field",
+      "definition": "安防 SoC、图像传感器、编解码芯片的供应、价格、替代方案与国产化进展。",
       "tags": [
         "端侧AI"
-      ],
-      "definition": "安防 SoC、图像传感器、编解码芯片的供应、价格、替代方案与国产化进展。",
-      "related": [
-        "edge-ai",
-        "low-light",
-        "industry-news"
       ]
     },
     {
       "slug": "traffic",
       "name": "智慧交通感知",
       "group": "field",
+      "definition": "卡口、电警、交通流检测、车路协同与道路感知设备的方案与项目动态。",
       "tags": [
         "交通"
-      ],
-      "definition": "卡口、电警、交通流检测、车路协同与道路感知设备的方案与项目动态。",
-      "related": [
-        "anpr",
-        "mmwave-radar",
-        "tenders"
       ]
     },
     {
       "slug": "product-releases",
       "name": "产品发布",
       "group": "genre",
+      "definition": "新设备、新平台、新固件与重大功能更新的发布记录：参数、可用性与适配范围。",
       "tags": [
         "产品发布",
         "固件/软件更新"
-      ],
-      "definition": "新设备、新平台、新固件与重大功能更新的发布记录：参数、可用性与适配范围。",
-      "related": [
-        "edge-ai",
-        "low-light",
-        "tech-advance"
       ]
     },
     {
       "slug": "standards",
       "name": "标准发布",
       "group": "genre",
+      "definition": "国标、行标、团标与国际标准的发布、报批、征求意见与修订：条文变化与执行时间。",
       "tags": [
         "标准发布"
-      ],
-      "definition": "国标、行标、团标与国际标准的发布、报批、征求意见与修订：条文变化与执行时间。",
-      "related": [
-        "certification",
-        "interoperability",
-        "policy"
       ]
     },
     {
       "slug": "certification",
       "name": "检测认证",
       "group": "genre",
+      "definition": "产品检测、认证、抽查结果与合规要求：哪些项目要测、按哪个版本测。",
       "tags": [
         "检测认证"
-      ],
-      "definition": "产品检测、认证、抽查结果与合规要求：哪些项目要测、按哪个版本测。",
-      "related": [
-        "standards",
-        "policy",
-        "product-releases"
       ]
     },
     {
       "slug": "policy",
       "name": "政策与监管",
       "group": "genre",
+      "definition": "法律法规、部委通知、监管措施、执法处罚与行业准入要求的第一手记录。",
       "tags": [
         "政策/监管"
-      ],
-      "definition": "法律法规、部委通知、监管措施、执法处罚与行业准入要求的第一手记录。",
-      "related": [
-        "data-security",
-        "standards",
-        "industry-news"
       ]
     },
     {
       "slug": "data-security",
       "name": "数据安全与隐私",
       "group": "genre",
+      "definition": "视频数据、人脸与车牌信息的采集使用合规要求、安全事件与处罚案例。",
       "tags": [
         "数据安全"
-      ],
-      "definition": "视频数据、人脸与车牌信息的采集使用合规要求、安全事件与处罚案例。",
-      "related": [
-        "policy",
-        "face-recognition",
-        "interoperability"
       ]
     },
     {
       "slug": "industry-news",
       "name": "行业动态",
       "group": "genre",
+      "definition": "经营、财报、融资并购、人事、合作与市场数据：影响行业格局的商业事实。",
       "tags": [
         "行业动态"
-      ],
-      "definition": "经营、财报、融资并购、人事、合作与市场数据：影响行业格局的商业事实。",
-      "related": [
-        "tenders",
-        "exhibitions",
-        "opinions"
       ]
     },
     {
       "slug": "tenders",
       "name": "招投标与项目",
       "group": "genre",
+      "definition": "招标中标、工程落地、试点项目与实效数据：规模、范围与技术要求。",
       "tags": [
         "招投标/项目",
         "应用场景"
-      ],
-      "definition": "招标中标、工程落地、试点项目与实效数据：规模、范围与技术要求。",
-      "related": [
-        "industry-news",
-        "projects-scene",
-        "traffic"
       ]
     },
     {
       "slug": "projects-scene",
       "name": "场景落地",
       "group": "genre",
+      "definition": "园区、社区、交通、零售、工厂、校园、医院等场景的方案落地与实际效果。",
       "tags": [
         "应用场景",
         "商用企业级",
         "家用消费级"
-      ],
-      "definition": "园区、社区、交通、零售、工厂、校园、医院等场景的方案落地与实际效果。",
-      "related": [
-        "tenders",
-        "traffic",
-        "edge-ai"
       ]
     },
     {
       "slug": "exhibitions",
       "name": "展会与活动",
       "group": "genre",
+      "definition": "CPSE、安博会、Intersec、ISC West 等展会上首次公开的产品、技术与行业信号。",
       "tags": [
         "展会/活动"
-      ],
-      "definition": "CPSE、安博会、Intersec、ISC West 等展会上首次公开的产品、技术与行业信号。",
-      "related": [
-        "product-releases",
-        "opinions",
-        "industry-news"
       ]
     },
     {
       "slug": "opinions",
       "name": "观点与分析",
       "group": "genre",
+      "definition": "趋势判断、专家访谈、行业复盘与深度分析：有独立信息量的观点内容。",
       "tags": [
         "观点/分析"
-      ],
-      "definition": "趋势判断、专家访谈、行业复盘与深度分析：有独立信息量的观点内容。",
-      "related": [
-        "tech-advance",
-        "industry-news",
-        "reviews"
       ]
     },
     {
       "slug": "reviews",
       "name": "评测与对比",
       "group": "genre",
+      "definition": "独立实测、参数对比、选型评测与技术进展解读：可用于选型与对标的内容。",
       "tags": [
         "评测/对比",
         "技术进展"
-      ],
-      "definition": "独立实测、参数对比、选型评测与技术进展解读：可用于选型与对标的内容。",
-      "related": [
-        "low-light",
-        "edge-ai",
-        "product-releases"
       ]
     },
     {
       "slug": "tech-advance",
       "name": "技术进展",
       "group": "genre",
+      "definition": "算法、成像、编解码、芯片与工程实现的进展，以及可迁移到其他项目的方法。",
       "tags": [
         "技术进展"
-      ],
-      "definition": "算法、成像、编解码、芯片与工程实现的进展，以及可迁移到其他项目的方法。",
-      "related": [
-        "edge-ai",
-        "video-analytics",
-        "reviews"
       ]
     },
     {
       "slug": "seetong",
       "name": "天视通（我司）",
       "group": "company",
-      "tags": [
-        "entity:seetong"
-      ],
       "definition": "深圳天视通技术有限公司的全部动态：IPC、低功耗与无线摄像机、4G 球机、NVR 与云平台。本站主体，内容同时用于与友商做同业对比。",
-      "related": [
-        "jiegao",
-        "jovision",
-        "xiongmai",
-        "peer-watch"
-      ],
       "entityId": "seetong"
     },
     {
       "slug": "jiegao",
       "name": "捷高",
       "group": "company",
-      "tags": [
-        "entity:jiegao"
-      ],
       "definition": "深圳市捷高电子科技有限公司的 AOV / 4G / Wi-Fi / IPC / 低功耗摄像机与 NVR 动态。同赛道友商。",
-      "related": [
-        "seetong",
-        "jovision",
-        "xiongmai",
-        "peer-watch"
-      ],
       "entityId": "jiegao"
     },
     {
       "slug": "jovision",
       "name": "中维世纪",
       "group": "company",
-      "tags": [
-        "entity:jovision"
-      ],
       "definition": "中维世纪（山东中维）的消费级与中小企业安防产品、方案与经营动态。同赛道友商。",
-      "related": [
-        "seetong",
-        "jiegao",
-        "xiongmai",
-        "peer-watch"
-      ],
       "entityId": "jovision"
     },
     {
       "slug": "xiongmai",
       "name": "雄迈",
       "group": "company",
-      "tags": [
-        "entity:xiongmai"
-      ],
       "definition": "雄迈（浙江雄迈）的 IPC、低功耗与无线套装产品动态。同赛道友商（官网更新较少，作存在性监测）。",
-      "related": [
-        "seetong",
-        "jiegao",
-        "jovision",
-        "peer-watch"
-      ],
       "entityId": "xiongmai"
     },
     {
       "slug": "anjiavision",
       "name": "安佳威视",
       "group": "company",
-      "tags": [
-        "entity:anjiavision"
-      ],
       "definition": "安佳威视的产品与方案动态。同赛道友商。",
-      "related": [
-        "seetong",
-        "jovision",
-        "peer-watch"
-      ],
       "entityId": "anjiavision"
     },
     {
       "slug": "tuya",
       "name": "涂鸦智能",
       "group": "company",
-      "tags": [
-        "entity:tuya"
-      ],
       "definition": "涂鸦智能的 IoT / 智能视觉产品与生态合作动态。平台型友商，常与摄像机厂商合作。",
-      "related": [
-        "seetong",
-        "jovision",
-        "peer-watch"
-      ],
       "entityId": "tuya"
     },
     {
       "slug": "ansjer",
       "name": "安联锐视",
       "group": "company",
-      "tags": [
-        "entity:ansjer"
-      ],
       "definition": "安联锐视（Ansjer）的摄像机与方案动态。同赛道友商。",
-      "related": [
-        "seetong",
-        "jiegao",
-        "peer-watch"
-      ],
       "entityId": "ansjer"
     },
     {
       "slug": "tvt",
       "name": "同为股份",
       "group": "company",
-      "tags": [
-        "entity:tvt"
-      ],
       "definition": "同为股份（TVT）的 IPC、NVR 与解决方案动态。同赛道友商。",
-      "related": [
-        "seetong",
-        "jovision",
-        "peer-watch"
-      ],
       "entityId": "tvt"
     },
     {
       "slug": "gwell",
       "name": "技威时代",
       "group": "company",
-      "tags": [
-        "entity:gwell"
-      ],
       "definition": "技威时代（Gwell / Yoosee）的智能摄像机与出海品牌动态。同赛道友商。",
-      "related": [
-        "seetong",
-        "jovision",
-        "peer-watch"
-      ],
       "entityId": "gwell"
     },
     {
       "slug": "shimeta",
       "name": "视美泰",
       "group": "company",
-      "tags": [
-        "entity:shimeta"
-      ],
       "definition": "视美泰（SVMAT）的 AIoT 主板、算力盒子与行业方案动态。上游方案商，可为产品选型参考。",
-      "related": [
-        "seetong",
-        "tuya",
-        "peer-watch"
-      ],
       "entityId": "shimeta"
     },
     {
       "slug": "peer-watch",
       "name": "同业对比（消费级与中小企业安防）",
       "group": "company",
+      "definition": "把天视通与捷高、中维世纪、雄迈、安佳威视、涂鸦智能、安联锐视、同为股份、技威时代的动态放在一处：消费级与中小企业安防赛道，按产品发布、技术路线（AOV/低功耗/4G 布点）、生态合作与出海节奏对比。",
       "tags": [
         "entity:seetong",
         "entity:jiegao",
@@ -862,19 +500,6 @@
         "entity:gwell",
         "entity:qingshi",
         "entity:shimeta"
-      ],
-      "definition": "把天视通与捷高、中维世纪、雄迈、安佳威视、涂鸦智能、安联锐视、同为股份、技威时代的动态放在一处：消费级与中小企业安防赛道，按产品发布、技术路线（AOV/低功耗/4G 布点）、生态合作与出海节奏对比。",
-      "related": [
-        "seetong",
-        "jiegao",
-        "jovision",
-        "xiongmai",
-        "anjiavision",
-        "tuya",
-        "ansjer",
-        "tvt",
-        "gwell",
-        "shimeta"
       ]
     }
   ]

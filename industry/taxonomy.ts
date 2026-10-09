@@ -4,18 +4,31 @@
 
 /**
  * 网页上的类别（筛选栏、卡片角标、RSS 分类订阅）。key 是网址和接口里的身份，上线后不要改。
- * section 是日报里的分节标题（几个类别可以共用一节，按这里的顺序排）；guide 告诉模型怎么归类。
+ * section 是日报里的分节标题（几个类别可以共用一节，按这里的顺序排）；guide 告诉结构抽取模型这一类收什么、
+ * 和相邻类别的边界在哪（总的归类原则写在 prompts/structure.md 里）。
+ * commentary 标出评论类（教程、观点）：日报写过的事又有评论类的后续报道，只占一行快讯（报道它的信源够多时除外）。
  * 没归上类的资料在日报里放进第一个 key 为 industry 的类别所在的节（没有就放最后一节）。
+ * feedLabel 是分类 RSS 标题里的名字（不写就用 label）。公开接口、RSS 和 MCP 里要把一类并进另一类发布，写在站点设置里（site/site.ts 的 PUBLIC_CATEGORIES）。
  */
 export const CATEGORIES = [
-  { key: "product", label: "产品", section: "产品与方案发布", guide: "摄像机、NVR、门禁、报警、对讲、雷达、音频、热成像、云台、AI 盒子、平台软件、客户端 App 与固件的新品发布、重大功能更新、停产与型号迭代" },
-  { key: "technology", label: "技术", section: "技术方向", guide: "端侧 AI 算法、图像与视频处理、编解码、低照度与宽动态、周界检测、识别与结构化、协议与互联、芯片与模组、低功耗与电池、云边协同等技术进展" },
-  { key: "standard", label: "标准", section: "标准与检测认证", guide: "国标 GB、行标 GA/GY、团标、地方标准、国际标准（IEC/ISO/EN/UL/ONVIF）的发布、征求意见、修订，以及检测认证、合规要求与测试规范" },
-  { key: "industry", label: "行业", section: "行业动态", guide: "公司经营、财报、融资并购、人事变动、战略合作、诉讼处罚、招投标与中标、产能与工厂、市场数据与研究报告" },
-  { key: "policy", label: "政策", section: "政策与监管", guide: "法律法规、部委政策与通知、行业准入、数据安全与个人信息保护要求、专项整治、地方监管措施与执法动态" },
-  { key: "project", label: "应用", section: "场景与项目落地", guide: "平安城市、雪亮工程、智慧交通、智慧园区、社区、工厂、校园、医院、零售、金融、能源等场景的落地案例、项目进展与实效数据" },
-  { key: "opinion", label: "观点", section: "观点与研究", guide: "行业趋势判断、专家访谈、展会观察、技术评测、复盘与分析，以及对行业现象的评论" },
-] as const;
+  { key: "product", label: "产品", feedLabel: "产品", section: "产品与方案发布", guide: "摄像机、NVR、门禁、报警、对讲、雷达、音频、热成像、云台、AI 盒子、平台软件、客户端 App 与固件的新品发布、重大功能更新、停产与型号迭代" },
+  { key: "technology", label: "技术", feedLabel: "技术", section: "技术方向", guide: "端侧 AI 算法、图像与视频处理、编解码、低照度与宽动态、周界检测、识别与结构化、协议与互联、芯片与模组、低功耗与电池、云边协同等技术进展" },
+  { key: "standard", label: "标准", feedLabel: "标准", section: "标准与检测认证", guide: "国标 GB、行标 GA/GY、团标、地方标准、国际标准（IEC/ISO/EN/UL/ONVIF）的发布、征求意见、修订，以及检测认证、合规要求与测试规范" },
+  { key: "industry", label: "行业", feedLabel: "行业动态", section: "行业动态", guide: "公司经营、财报、融资并购、人事变动、战略合作、诉讼处罚、招投标与中标、产能与工厂、市场数据与研究报告" },
+  { key: "policy", label: "政策", feedLabel: "政策", section: "政策与监管", guide: "法律法规、部委政策与通知、行业准入、数据安全与个人信息保护要求、专项整治、地方监管措施与执法动态" },
+  { key: "project", label: "应用", feedLabel: "应用", section: "场景与项目落地", guide: "平安城市、雪亮工程、智慧交通、智慧园区、社区、工厂、校园、医院、零售、金融、能源等场景的落地案例、项目进展与实效数据" },
+  { key: "opinion", label: "观点", feedLabel: "观点", section: "观点与研究", guide: "行业趋势判断、专家访谈、展会观察、技术评测、复盘与分析，以及对行业现象的评论", commentary: true },
+] as const satisfies ReadonlyArray<{ key: string; label: string; feedLabel?: string; section: string; guide: string; commentary?: true }>;
+
+/**
+ * 这个行业最受关注的一类发布（安防行业是产品新品）：日报报头的“N 个新产品”、改分类后修订已出的报告都按它数。
+ * category 是类别，tag 是标签，两者都对上才算；unit 接在数字后面。
+ * 没有这样一类的行业设成 null，报头就不显示这个数。
+ */
+export const RELEASE: { category: string; tag: string; unit: string } | null = { category: "product", tag: "产品发布", unit: "个新产品" };
+
+/** 周报月报的总述可以直接写、不必在报道里找到出处的行业通用词（小写）。站名会自动算进去。 */
+export const PLAIN_TERMS: readonly string[] = ["ai", "api", "nvr", "dvr", "ipc", "poe", "gpu", "soc", "onvif", "gb28181", "ceo", "ipo"];
 
 /**
  * 内容理解一步给每篇资料判的“内容类型”（写在 prompts/content-understanding.md 里，改了类型要同步改那份提示词）。
@@ -88,7 +101,7 @@ export const CATEGORY_BY_ITEM_TYPE: Readonly<Record<string, string>> = {
 };
 
 /** 行业里的主要公司或机构，用于“公司”类主题页。displayTag 是页面上显示的名字。 */
-export const ENTITIES: Readonly<Record<string, { name: string; displayTag: string | null; aliases: readonly string[] }>> = {
+export const ENTITIES: Record<string, { name: string; displayTag: string | null; aliases: string[]; otherNames?: string[] }> = {
   hikvision: { name: "海康威视", displayTag: "海康威视", aliases: ["海康威视", "海康", "HIKVISION", "Hikvision"] },
   dahua: { name: "大华股份", displayTag: "大华股份", aliases: ["大华股份", "大华技术", "大华", "Dahua", "DAHUA"] },
   uniview: { name: "宇视科技", displayTag: "宇视科技", aliases: ["宇视科技", "宇视", "Uniview", "UNV"] },

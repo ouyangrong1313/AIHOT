@@ -1,5 +1,5 @@
 {
-  "$comment": "安防行业示范信源：首次启动时导入（scripts/seed.ts），已存在的不会被覆盖。之后在后台“信源”里增删改。字段说明见 docs/sources.md 与 docs/customize.md。",
+  "$comment": "安防行业示范信源：首次启动时导入（scripts/seed.ts），已存在的不会被覆盖。之后在后台“信源”里新建、修改和暂停。字段说明见 docs/customize.md。",
   "sources": [
     {
       "id": "rss-axis-newsroom",
@@ -12,7 +12,6 @@
         }
       },
       "tier": "T1",
-      "first_party": true,
       "owner_entity_id": "axis",
       "participation_mode": "editorial",
       "interval_minutes": 120,
@@ -34,7 +33,6 @@
         }
       },
       "tier": "T1",
-      "first_party": true,
       "owner_entity_id": "lorex",
       "participation_mode": "editorial",
       "interval_minutes": 120,
@@ -60,7 +58,6 @@
         }
       },
       "tier": "T1",
-      "first_party": true,
       "owner_entity_id": "dahua",
       "participation_mode": "editorial",
       "interval_minutes": 120,
@@ -85,7 +82,6 @@
         }
       },
       "tier": "T1",
-      "first_party": true,
       "owner_entity_id": "uniview",
       "participation_mode": "editorial",
       "interval_minutes": 120,
@@ -110,7 +106,6 @@
         }
       },
       "tier": "T1",
-      "first_party": true,
       "owner_entity_id": "longse",
       "participation_mode": "editorial",
       "interval_minutes": 120,
@@ -135,7 +130,6 @@
         }
       },
       "tier": "T1",
-      "first_party": true,
       "owner_entity_id": "csppi",
       "participation_mode": "editorial",
       "interval_minutes": 120,
@@ -193,7 +187,6 @@
         }
       },
       "tier": "T1",
-      "first_party": true,
       "owner_entity_id": "samr",
       "participation_mode": "editorial",
       "interval_minutes": 360,
@@ -219,7 +212,6 @@
         }
       },
       "tier": "T2",
-      "first_party": false,
       "owner_entity_id": null,
       "participation_mode": "editorial",
       "interval_minutes": 60,
@@ -244,7 +236,6 @@
         }
       },
       "tier": "T2",
-      "first_party": false,
       "owner_entity_id": null,
       "participation_mode": "editorial",
       "interval_minutes": 60,
@@ -270,7 +261,6 @@
         }
       },
       "tier": "T2",
-      "first_party": false,
       "owner_entity_id": null,
       "participation_mode": "editorial",
       "interval_minutes": 60,
@@ -295,7 +285,6 @@
         }
       },
       "tier": "T2",
-      "first_party": false,
       "owner_entity_id": null,
       "participation_mode": "editorial",
       "interval_minutes": 60,
@@ -320,7 +309,6 @@
         }
       },
       "tier": "T2",
-      "first_party": false,
       "owner_entity_id": null,
       "participation_mode": "editorial",
       "interval_minutes": 60,
@@ -347,7 +335,6 @@
         }
       },
       "tier": "T1_5",
-      "first_party": true,
       "owner_entity_id": "seetong",
       "participation_mode": "editorial",
       "interval_minutes": 120,
@@ -384,7 +371,6 @@
         }
       },
       "tier": "T1_5",
-      "first_party": true,
       "owner_entity_id": "jiegao",
       "participation_mode": "editorial",
       "interval_minutes": 120,
@@ -413,7 +399,6 @@
         }
       },
       "tier": "T1_5",
-      "first_party": true,
       "owner_entity_id": "jovision",
       "participation_mode": "editorial",
       "interval_minutes": 120,
@@ -458,7 +443,6 @@
         }
       },
       "tier": "T1_5",
-      "first_party": true,
       "owner_entity_id": "tvt",
       "participation_mode": "editorial",
       "interval_minutes": 120,
@@ -496,7 +480,6 @@
         }
       },
       "tier": "T1_5",
-      "first_party": true,
       "owner_entity_id": "tuya",
       "participation_mode": "editorial",
       "interval_minutes": 120,
@@ -523,7 +506,6 @@
         }
       },
       "tier": "T1_5",
-      "first_party": true,
       "owner_entity_id": "gwell",
       "participation_mode": "editorial",
       "interval_minutes": 120,
@@ -550,7 +532,6 @@
         }
       },
       "tier": "T1_5",
-      "first_party": true,
       "owner_entity_id": "anjiavision",
       "participation_mode": "editorial",
       "interval_minutes": 120,
@@ -578,7 +559,6 @@
         }
       },
       "tier": "T1_5",
-      "first_party": true,
       "owner_entity_id": "shimeta",
       "participation_mode": "editorial",
       "interval_minutes": 120,
@@ -602,7 +582,6 @@
         }
       },
       "tier": "T1_5",
-      "first_party": true,
       "owner_entity_id": "ansjer",
       "participation_mode": "editorial",
       "interval_minutes": 120,
